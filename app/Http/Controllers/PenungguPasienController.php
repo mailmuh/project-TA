@@ -39,11 +39,11 @@ class PenungguPasienController extends Controller
     public function store(Request $request)
     {
         
-
-        $fileNameSK = time().'.'.request()->surat_keterangan->getClientOriginalExtension();
+        $fileNameSK =  'Gambar-'.request()->surat_keterangan->getClientOriginalName();
         
             $penunggupasien = new PenungguPasien();
             $penunggupasien->nama = $request->nama;
+            $penunggupasien->nik = $request->nik;
             $penunggupasien->tanggal = $request->tanggal;
             $penunggupasien->surat_permohonan = $request->surat_permohonan;
             $penunggupasien->kk_pemohon = $request->kk_pemohon;
@@ -98,6 +98,7 @@ class PenungguPasienController extends Controller
         if (!$request->surat_keterangan) {
             $request->validate([
                 'nama' => 'required',
+                'nik' => 'required',
                 'tanggal' => 'required',
                 'surat_permohonan' => 'required',
                 'kk_pemohon' => 'required',
@@ -108,6 +109,7 @@ class PenungguPasienController extends Controller
         }else {
             $request->validate([
                 'nama' => 'required',
+                'nik' => 'required',
                 'tanggal' => 'required',
                 'surat_permohonan' => 'required',
                 'kk_pemohon' => 'required',
@@ -183,33 +185,5 @@ class PenungguPasienController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function storeVerifikasi(Request $request)
-    {
 
-        $fileNameSK = time().'.'.request()->surat_keterangan->getClientOriginalExtension();
-        
-            $verifikasi = new Verifikasi();
-            $verifikasi->nama_pemohon = $request->nama_pemohon;
-            $verifikasi->ktp_pemohon = $request->ktp_pemohon;
-            $verifikasi->alamat_pemohon = $request->alamat_pemohon;
-            $verifikasi->nama_pasien = $request->nama_pasien;
-            $verifikasi->ktp_pasien = $request->ktp_pasien;
-            $verifikasi->alamat_pasien = $request->alamat_pasien;
-            $verifikasi->surat_permohonan = $request->surat_permohonan;
-            $verifikasi->kk_pemohon = $request->kk_pemohon;
-            $verifikasi->kk_pasien = $request->kk_pasien;
-            $verifikasi->sep = $request->sep;
-            $verifikasi->surat_kuasa = $request->surat_kuasa;
-            
-            if ($request->surat_keterangan->move(storage_path('app/public/DataPenungguPasien/gambar'), $fileNameSK)) {
-                $verifikasi->surat_keterangan = "storage/DataPenungguPasien/gambar/".$fileNameSK;
-            }
-
-            $verifikasi->keterangan = $request->keterangan;
-            
-            $verifikasi->save();
-
-        return redirect(route('penunggupasiens.index'))->with('success', 'Data Pemohon baru berhasil ditambahkan');
-
-    }
 }

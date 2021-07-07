@@ -11,7 +11,7 @@
     <div class="card">
         <div class="header">
             <center>
-                <h2> Data Pemohon Penunggu Pasien </h2>
+                <h2> Data Verifikasi </h2>
             </center>
             <ul class="header-dropdown m-r--5">
                 <li class="dropdown">

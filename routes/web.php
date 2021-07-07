@@ -20,4 +20,7 @@ Route::get('/', function () {
 });
 
 Route::Resource('penunggupasiens', 'PenungguPasienController');
+
 Route::Resource('verifikasis', 'VerifikasiController');
+
+// Route::get('verifikasis/{penunggupasiens}', 'VerifikasiController@edit')->name('verifikasis.edit');

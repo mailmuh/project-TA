@@ -15,12 +15,14 @@ class CreateVerifikasisTable extends Migration
     {
         Schema::create('verifikasis', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_pemohon');
+            $table->bigInteger('nama')->unsigned();
+            $table->bigInteger('nik')->unsigned();
             $table->string('ktp_pemohon');
             $table->string('alamat_pemohon');
             $table->string('nama_pasien');
             $table->string('ktp_pasien');
             $table->string('alamat_pasien');
+            $table->bigInteger('tanggal')->unsigned();
             $table->bigInteger('surat_permohonan')->unsigned();
             $table->bigInteger('kk_pemohon')->unsigned();
             $table->bigInteger('kk_pasien')->unsigned();
@@ -30,7 +32,10 @@ class CreateVerifikasisTable extends Migration
             $table->bigInteger('keterangan')->unsigned();
             $table->timestamps();
 
+            $table->foreign('nama')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            $table->foreign('nik')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
             $table->foreign('surat_permohonan')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            $table->foreign('tanggal')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
             $table->foreign('kk_pemohon')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
             $table->foreign('kk_pasien')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
             $table->foreign('sep')->references('id')->on('penunggu_pasiens')->onDelete('cascade');

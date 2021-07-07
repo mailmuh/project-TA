@@ -11,13 +11,25 @@
         <div class="body">
             <div class="row clearfix">
                 <div class="col-sm-12">
-                    <form action=" {{ route('verifikasis.update') }} " method="post" autocomplete="off" enctype="multipart/form-data">
+                    <form action=" {{ route('verifikasis.update', $penunggupasien->id) }} " method="post" autocomplete="off" enctype="multipart/form-data">
                         @csrf
-                        @method('POST')  
+                        @method('PUT')  
                         <div class="form-group">
                             <div class="form-line">
                                 <label>NAMA</label>
                                 <input type="text" name="nama" placeholder="Masukan Nama Obat" value="{{ $penunggupasien->nama }}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>NIK</label>
+                                <input type="text" name="nik" placeholder="Masukan Nama Obat" value="{{ $penunggupasien->nik }}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>TANGGAL</label>
+                                <input type="date" name="tanggal" placeholder="Masukan Nama Obat" value="{{ $penunggupasien->tanggal }}" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
@@ -46,8 +58,38 @@
                         </div>
                         <div class="form-group">
                             <div class="form-line">
+                                <label>KTP Pemohon</label>
+                                <input type="text" name="ktp_pemohon" placeholder="Masukan Agama Dokter" class="form-control"  required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>Alamat Pemohon</label>
+                                <input type="text" name="alamat_pemohon" placeholder="Masukan Agama Dokter" class="form-control"  required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>Nama Pasien</label>
+                                <input type="text" name="nama_pasien" placeholder="Masukan Agama Dokter" class="form-control"  required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>KTP Pasien</label>
+                                <input type="text" name="ktp_pasien" placeholder="Masukan Agama Dokter" class="form-control"  required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>Alamat Pasien</label>
+                                <input type="text" name="alamat_pasien" placeholder="Masukan Agama Dokter" class="form-control"  required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
                                 <label>SURAT KUASA</label>
-                                <input type="text" name="surat_kuasa" placeholder="Masukan Agama Dokter" class="form-control" value="{{ $penunggupasien->surat_kuasa }}" required>
+                                <input type="text" name="surat_kuasa" placeholder="Masukan Agama Dokter" class="form-control"  required>
                             </div>
                         </div>
                         <div class="form-group">

@@ -22,6 +22,12 @@
                         </div>
                         <div class="form-group">
                             <div class="form-line">
+                                <label>NIK</label>
+                                <input type="text" name="nik" placeholder="Masukan Nama Obat" value="{{ $penunggupasien->nik }}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
                                 <label>TANGGAL</label>
                                 <input type="date" name="tanggal" placeholder="Masukan Tanggal" value="{{ $penunggupasien->tanggal }}" class="form-control">
                             </div>

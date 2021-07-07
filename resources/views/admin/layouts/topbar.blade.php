@@ -3,6 +3,7 @@
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
+            <img class="navbar-brand" src="{{asset('assets/images/dinsos.png')}}"style="width:75px;height:55px">
             <a class="navbar-brand" href="/">SPB | DINAS SOSIAL
                 <!-- <img src="{{asset('assets/images/dinsos.png')}}" width="70" height="55" alt="" /> -->
             </a>    
@@ -122,7 +123,7 @@
                 </li>
                 <!-- #END# Notifications -->
                 <!-- Tasks -->
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                         <i class="material-icons">flag</i>
                         <span class="label-count">9</span>
@@ -197,7 +198,7 @@
                             <a href="javascript:void(0);">View All Tasks</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <!-- #END# Tasks -->
                 <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
             </ul>

@@ -21,6 +21,12 @@
                         </div>
                         <div class="form-group">
                             <div class="form-line">
+                                <label>NIK</label>
+                                <input type="text" name="nik" placeholder="Masukan Nama Pemohon" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-line">
                                 <label>TANGGAL</label>
                                 <input type="date" name="tanggal" placeholder="Masukan Tanggal" class="form-control" required>
                             </div>

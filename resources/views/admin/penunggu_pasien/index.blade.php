@@ -31,16 +31,17 @@
                 <a href="{{ route('penunggupasiens.create') }}" class="btn bg-purple waves-effect m-r-20">Add Data</a>
             </div>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <table id="tabelPasien" class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead>
                             <tr>
                                 <th scope="col">NO</th>                            
                                 <th scope="col">NAMA</th>
+                                <th scope="col">NIK</th>
                                 <th scope="col">TANGGAL</th>
                                 <th scope="col">SURAT PERMOHONAN</th>
                                 <th scope="col">KK PEMOHON</th>
-                                <th scope="col">KK PASIEN</th>
-                                <!-- <th scope="col">SEP</th>
+                                <!-- <th scope="col">KK PASIEN</th>
+                                <th scope="col">SEP</th>
                                 <th scope="col">SURAT KUASA</th> -->
                                 <th scope="col">SURAT KETERANGAN</th>
                                 <th scope="col">KETERANGAN</th>
@@ -52,11 +53,12 @@
                             <tr>
                                 <td>{{ $d+1 }}</td>
                                 <td>{{ $penunggupasien->nama }}</td>
+                                <td>{{ $penunggupasien->nik }}</td>
                                 <td>{{ $penunggupasien->tanggal }}</td>
                                 <td>{{ $penunggupasien->surat_permohonan }}</td>
                                 <td>{{ $penunggupasien->kk_pemohon }}</td>
-                                <td>{{ $penunggupasien->kk_pasien }}</td>
-                                <!-- <td>{{ $penunggupasien->sep }}</td>
+                                <!-- <td>{{ $penunggupasien->kk_pasien }}</td>
+                                <td>{{ $penunggupasien->sep }}</td>
                                 <td>{{ $penunggupasien->surat_kuasa }}</td> -->
                                 <td>
                                     @if($penunggupasien->surat_keterangan!= NULL)

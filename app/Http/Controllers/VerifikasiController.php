@@ -57,9 +57,10 @@ class VerifikasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(PenungguPasien $penunggupasien)
+    public function edit(PenungguPasien $penunggupasien, $id)
     {
-        return view('admin.penunggu_pasien.edit', compact('penunggupasien'));
+        $penunggupasien = PenungguPasien::findOrFail($id);
+        return view('admin.verifikasi.verifikasi', compact('penunggupasien'));
     }
 
     /**
@@ -71,7 +72,33 @@ class VerifikasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $fileNameSK =  'Verifikasi-'.request()->surat_keterangan->getClientOriginalName();
+        
+        $penunggupasien = new Verifikasi();
+        $penunggupasien->nama = $request->nama;
+        $penunggupasien->nik = $request->nik;
+        $penunggupasien->tanggal = $request->tanggal;
+        $penunggupasien->surat_permohonan = $request->surat_permohonan;
+        $penunggupasien->kk_pemohon = $request->kk_pemohon;
+        $penunggupasien->kk_pasien = $request->kk_pasien;
+        $penunggupasien->sep = $request->sep;
+        $penunggupasien->surat_kuasa = $request->surat_kuasa;
+        $penunggupasien->ktp_pemohon = $request->ktp_pemohon;
+        $penunggupasien->alamat_pemohon = $request->alamat_pemohon;
+        $penunggupasien->nama_pasien = $request->nama_pasien;
+        $penunggupasien->ktp_pasien = $request->ktp_pasien;
+        $penunggupasien->alamat_pasien = $request->alamat_pemohon;
+        $penunggupasien->keterangan = $request->keterangan;
+
+        $verif                   = $request->file('surat_keterangan');
+        $verifName   = 'suratKeterangan-'. $verif->getClientOriginalName();
+        if ($request->surat_keterangan->move(storage_path('app/public/Data/Verifikasi/'), $verifName)) {
+            $penunggupasien->surat_keterangan = "storage/Data/Verifikasi/".$verifName;
+        }
+        
+        $penunggupasien->save();
+
+        return redirect(route('penunggupasiens.index'))->with('success', 'Data Berhasil diVerifikasi');
     }
 
     /**

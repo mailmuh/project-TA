@@ -16,6 +16,7 @@ class CreatePenungguPasiensTable extends Migration
         Schema::create('penunggu_pasiens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
+            $table->string('nik');
             $table->date('tanggal');
             $table->string('surat_permohonan');
             $table->string('kk_pemohon');
@@ -23,7 +24,7 @@ class CreatePenungguPasiensTable extends Migration
             $table->string('sep');
             $table->string('surat_kuasa')->nullable();
             $table->string('surat_keterangan');
-            $table->enum('keterangan',['terverifikasi', 'belum terverifikasi']);
+            $table->enum('keterangan',['Terverifikasi', 'Belum Terverifikasi']);
             $table->timestamps();
         });
     }
