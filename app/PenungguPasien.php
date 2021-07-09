@@ -15,4 +15,8 @@ class PenungguPasien extends Model
     public function verifikaiss() {
     	return $this->hasMany(Verifikasi::class, 'tanggal', 'surat_permohonan', 'kk_pemohon', 'kk_pasien', 'sep', 'surat_kuasa', 'surat_keterangan', 'keterangan');
     }
+
+    // public function pemohon_verif() {
+    //     return $this->belongsTo('App\Verifikasi');
+    // }
 }

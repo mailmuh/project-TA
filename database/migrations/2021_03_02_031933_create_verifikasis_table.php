@@ -15,33 +15,34 @@ class CreateVerifikasisTable extends Migration
     {
         Schema::create('verifikasis', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('nama')->unsigned();
-            $table->bigInteger('nik')->unsigned();
+            $table->string('nama');
+            $table->string('nik');
             $table->string('ktp_pemohon');
             $table->string('alamat_pemohon');
             $table->string('nama_pasien');
             $table->string('ktp_pasien');
             $table->string('alamat_pasien');
-            $table->bigInteger('tanggal')->unsigned();
-            $table->bigInteger('surat_permohonan')->unsigned();
-            $table->bigInteger('kk_pemohon')->unsigned();
-            $table->bigInteger('kk_pasien')->unsigned();
-            $table->bigInteger('sep')->unsigned();
-            $table->bigInteger('surat_kuasa')->unsigned();
-            $table->bigInteger('surat_keterangan')->unsigned();
-            $table->bigInteger('keterangan')->unsigned();
+            $table->string('tanggal');
+            $table->string('surat_permohonan');
+            $table->string('kk_pemohon');
+            $table->string('kk_pasien');
+            $table->string('sep');
+            $table->string('surat_kuasa');
+            $table->string('surat_keterangan');
+            $table->string('keterangan');
+            $table->integer('pemohon_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('nama')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('nik')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('surat_permohonan')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('tanggal')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('kk_pemohon')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('kk_pasien')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('sep')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('surat_kuasa')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('surat_keterangan')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
-            $table->foreign('keterangan')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('nama')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('nik')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('surat_permohonan')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('tanggal')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('kk_pemohon')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('kk_pasien')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('sep')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('surat_kuasa')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('surat_keterangan')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
+            // $table->foreign('keterangan')->references('id')->on('penunggu_pasiens')->onDelete('cascade');
 
         });
     }

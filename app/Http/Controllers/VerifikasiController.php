@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Verifikasi;
 use App\PenungguPasien;
+use Illuminate\Support\Facades\Auth;
 
 class VerifikasiController extends Controller
 {
@@ -89,6 +90,7 @@ class VerifikasiController extends Controller
         $penunggupasien->ktp_pasien = $request->ktp_pasien;
         $penunggupasien->alamat_pasien = $request->alamat_pemohon;
         $penunggupasien->keterangan = $request->keterangan;
+        $penunggupasien->pemohon_id = Auth::id();
 
         $verif                   = $request->file('surat_keterangan');
         $verifName   = 'suratKeterangan-'. $verif->getClientOriginalName();

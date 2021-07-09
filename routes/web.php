@@ -13,14 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('admin.dashboard');
+Auth::routes();
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/', 'HomeController@index');
+
+    Route::Resource('penunggupasiens', 'PenungguPasienController');
+    Route::Resource('verifikasis', 'VerifikasiController');
 
 });
 
-Route::Resource('penunggupasiens', 'PenungguPasienController');
+// Route::get('/', function () {
+//     // return view('welcome');
+//     return view('admin.dashboard');
 
-Route::Resource('verifikasis', 'VerifikasiController');
+// });
 
-// Route::get('verifikasis/{penunggupasiens}', 'VerifikasiController@edit')->name('verifikasis.edit');
+// Route::Resource('penunggupasiens', 'PenungguPasienController');
+
+// Route::Resource('verifikasis', 'VerifikasiController');
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
