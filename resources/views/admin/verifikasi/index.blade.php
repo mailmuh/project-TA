@@ -62,7 +62,7 @@
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('verifikasi.destroyVerifikasi', $verifikasi->id) }}"method="POST">
                                         <!-- <a href="{{ route('penunggupasiens.edit', $verifikasi->id) }}" class="btn btn-sm btn-primary">Show</a> -->
                                         <a href="{{ route('verifikasi.detail', $verifikasi->id) }}" class="btn btn-sm btn-primary">Show</a>
-                                        <a href="{{ route('verifikasi.detail', $verifikasi->id) }}" class="btn btn-sm btn-success">Pembayaran</a>
+                                        <a href="{{ route('pembayarans.edit', $verifikasi->id) }}" class="btn btn-sm btn-success">Pembayaran</a>
                                         <!-- <a href="" class="btn btn-sm btn-primary">Edit</a> -->
                                         <!-- <a href="{{ route('penunggupasiens.show', $verifikasi->id) }}" class="btn btn-sm btn-success waves-effect m-r-20">Show</a>
  -->                                        @csrf

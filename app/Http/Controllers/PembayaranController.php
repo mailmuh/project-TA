@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pembayaran;
+use App\PenungguPasien;
 
 class PembayaranController extends Controller
 {
@@ -58,7 +59,8 @@ class PembayaranController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pembayaran = Pembayaran::findOrFail($id);
+        return view('admin.pembayaran.pembayaran', compact('pembayaran'));
     }
 
     /**
@@ -68,9 +70,31 @@ class PembayaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pembayaran $pembayaran)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'nik' => 'required',
+            // 'ktp_pemohon' => 'required',
+            'alamat_pemohon' => 'required',
+            'nohp' => 'required',
+            'nama_pasien' => 'required',
+            'ktp_pasien' => 'required',
+            'jumlah_bantuan' => 'required',
+        ]);
+
+        $data = $pembayaran;
+        $data->nama = $request->nama;
+        $data->nik = $request->nik;
+        // $data->ktp_pemohon = $request->ktp_pemohon;
+        $data->alamat_pemohon = $request->alamat_pemohon;
+        $data->nohp = $request->nohp;
+        $data->nama_pasien = $request->nama_pasien;
+        $data->ktp_pasien = $request->ktp_pasien;
+        $data->jumlah_bantuan = $request->jumlah_bantuan;
+        $data->update();
+
+        return redirect()->route('pembayarans.index');
     }
 
     /**
@@ -81,6 +105,9 @@ class PembayaranController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pembayaran = Pembayaran::find($id);
+        $pembayaran->delete();
+
+        return redirect(route('pembayarans.index'))->with('success', 'Data Berhasil Dihapus');
     }
 }

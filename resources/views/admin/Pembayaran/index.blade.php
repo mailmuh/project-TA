@@ -34,9 +34,9 @@
                                     <th scope="col">NO</th>                            
                                     <th scope="col">NAMA</th>
                                     <th scope="col">NIK</th>
-                                    <th scope="col">TANGGAL</th>
+                                    <th scope="col">ALAMAT</th>
+                                    <th scope="col">NOMOR HP</th>
                                     <th scope="col">JUMLAH</th>
-                                    <th scope="col">KETERANGAN</th>
                                     <th scope="col">AKSI</th>
                             </tr>
                         </thead>
@@ -46,14 +46,14 @@
                                 <td>{{ $d+1 }}</td>
                                 <td>{{ $pembayaran->nama }}</td>
                                 <td>{{ $pembayaran->nik }}</td>
-                                <td>{{ $pembayaran->tanggal }}</td>
-                                <td>{{ $pembayaran->jumlah }}</td>
-                                <td>{{ $pembayaran->keterangan }}</td>
+                                <td>{{ $pembayaran->alamat_pemohon }}</td>
+                                <td>{{ $pembayaran->nohp }}</td>
+                                <td>{{ $pembayaran->jumlah_bantuan }}</td>
                                 <td class="text-align:center">
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('penunggupasiens.destroy', $pembayaran->id) }}"method="POST">
+                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pembayarans.destroy', $pembayaran->id) }}"method="POST">
                                         <!-- <a href="{{ route('penunggupasiens.edit', $pembayaran->id) }}" class="btn btn-sm btn-primary">Show</a> -->
                                         <a href="" class="btn btn-sm btn-primary">Show</a>
-                                        <a href="" class="btn btn-sm btn-primary">Edit</a>
+                                        <a href="{{ route('pembayarans.edit', $pembayaran->id) }}" class="btn btn-sm btn-primary">Pembayaran</a>
                                         <!-- <a href="{{ route('penunggupasiens.show', $pembayaran->id) }}" class="btn btn-sm btn-success waves-effect m-r-20">Show</a>
  -->                                        @csrf
                                         @method('DELETE')

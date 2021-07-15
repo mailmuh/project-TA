@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\PenungguPasien;
 use App\Verifikasi;
 use App\UserPemohon;
+use App\Pembayaran;
 use Illuminate\Support\Facades\Hash;
 
 class PenungguPasienController extends Controller
@@ -67,6 +68,11 @@ class PenungguPasienController extends Controller
             $penunggupasien->keterangan = 'belum terverifikasi';
             
             $penunggupasien->save();
+
+            UserPemohon::create([
+                'nama' => $request->input("nama"),
+                'nik' => $request->input("nik"),
+                'password' => Hash::make($request->input("nik"))]);
 
         return redirect(route('penunggupasiens.index'))->with('success', 'Data Pemohon baru berhasil ditambahkan');
     }
@@ -210,11 +216,23 @@ class PenungguPasienController extends Controller
         PenungguPasien::where('id',$id)->update(['keterangan'=>"terverifikasi"]);
         
         // menambahkan user pemohon ke tb userpemohon
+        // $penunggupasien = PenungguPasien::where('id', $id)->first();
+        // UserPemohon::create([
+        //     'nama' => $penunggupasien->nama,
+        //     'nik' => $penunggupasien->nik,
+        //     'password' => Hash::make($penunggupasien->nik)
+        // ]);
+
+        // menambahkan data ke tabel pembayaran
         $penunggupasien = PenungguPasien::where('id', $id)->first();
-        UserPemohon::create([
+        Pembayaran::create([
             'nama' => $penunggupasien->nama,
             'nik' => $penunggupasien->nik,
-            'password' => Hash::make($penunggupasien->nik)
+            'ktp_pemohon' => $penunggupasien->ktp_pemohon,
+            'alamat_pemohon' => $penunggupasien->alamat_pemohon,
+            'nohp' => $penunggupasien->nohp,
+            'nama_pasien' => $penunggupasien->nama_pasien,
+            'ktp_pasien' => $penunggupasien->ktp_pasien,
         ]);
 
         return redirect(route('penunggupasiens.index'))->with('success', 'Data berhasil diverifikasi');
