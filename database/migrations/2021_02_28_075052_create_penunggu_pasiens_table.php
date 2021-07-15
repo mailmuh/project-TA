@@ -17,7 +17,14 @@ class CreatePenungguPasiensTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama');
             $table->string('nik');
-            $table->date('tanggal');
+            $table->string('ktp_pemohon');
+            $table->string('alamat_pemohon');
+            $table->string('nohp');
+            $table->string('email');
+            $table->string('nama_pasien');
+            $table->string('ktp_pasien');
+            $table->string('alamat_pasien');
+            $table->string('tanggal');
             $table->string('surat_permohonan');
             $table->string('kk_pemohon');
             $table->string('kk_pasien');

@@ -100,7 +100,7 @@ class VerifikasiController extends Controller
         
         $penunggupasien->save();
 
-        return redirect(route('penunggupasiens.index'))->with('success', 'Data Berhasil diVerifikasi');
+        return redirect(route('verifikasis.index'))->with('success', 'Data Berhasil diVerifikasi');
     }
 
     /**

@@ -67,16 +67,52 @@
                                         <h5 style="color:red">Tidak ada Gambar</h5>
                                     @endif 
                                 </td>
-                                <td><a href="{{ route('verifikasis.edit', $penunggupasien->id) }}">{{ $penunggupasien->keterangan }}</a></td>
+                                <!-- <td><a href="{{ route('verifikasis.edit', $penunggupasien->id) }}">{{ $penunggupasien->keterangan }}</a></td> -->
+                                <td>{{ $penunggupasien->keterangan }}</td>
 
                                 <td class="text-align:center">
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('penunggupasiens.destroy', $penunggupasien->id) }}"method="POST">
+                                        <a href="{{ route('penunggupasiens.show', $penunggupasien->id) }}" class="btn btn-sm btn-info">Show</a>    
                                         <a href="{{ route('penunggupasiens.edit', $penunggupasien->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                        <a class="btn btn-success" data-toggle="modal" data-target="#tambahklasifikasi">Verifikasi</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger waves-effect m-r-20">Delete</button>
                                     </form>
                                 </td>
+
+                                <!--modal konfirmasi-->
+                                <div class="modal fade" id="tambahklasifikasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"><i
+                                                    class="nav-icon fas fa-layer-group my-1 btn-sm-1"></i> Verifikasi Data Pemohon </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{ route('penunggupasiens.verifikasi', $penunggupasien->id) }}" method="POST">
+                                                {{csrf_field()}}
+                                                @method('PUT')
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label for="nama">apakah anda ingin mengkonfirmasi?</label>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-save"></i>
+                                                    SETUJUI</button>
+                                                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close"><i class="fas fa"></i>
+                                                    TIDAK</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             </tr>
                             @endforeach
                         </tbody>

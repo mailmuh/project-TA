@@ -5,8 +5,8 @@
             <img src="{{asset('assets/images/user.png')}}" width="48" height="48" alt="User" />
         </div>
         <div class="info-container">
-            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</div>
-            <div class="email">admin@example.com</div>
+            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</div>
+            <div class="email">{{ Auth::user()->email}}</div>
             <div class="btn-group user-helper-dropdown">
                 <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                 <ul class="dropdown-menu pull-right">
@@ -33,29 +33,43 @@
     <div class="menu">
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active">
+            <li class="{{ Request::is('/')?'active':'' }}">
                 <a href="/">
                     <i class="material-icons">home</i>
                     <span>Home</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ Request::is('penunggupasiens')?'active':'' }}, {{ Request::is('penunggupasiens')?'active':'' }}">
                 <a href="/penunggupasiens">
                     <i class="material-icons">assignment</i>
                     <span>Data Pemohon</span>
                 </a>
             </li>
-            <li>
-                <a href="/verifikasis">
+            <li class="{{ Request::is('verifikasi')?'active':'' }}">
+                <a href="/verifikasi">
                     <i class="material-icons">playlist_add_check</i>
                     <span>Data Verifikasi</span>
                 </a>
             </li>
-            <li>
-                <a href="/">
+            <li class="{{ Request::is('pembayarans')?'active':'' }}">
+                <a href="/pembayarans">
                     <i class="material-icons">payment</i>
                     <span>Data Pembayaran</span>
                 </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons">people</i>
+                    <span>Kelola Akun</span>
+                </a>
+                <ul class="ml-menu">
+                    <li>
+                        <a href="/">Akun Admin</a>
+                    </li>
+                    <li>
+                        <a href="/">Akun Pemohon</a>
+                    </li>
+                </ul>
             </li>
             <!-- <li>
                 <a href="pages/typography.html">

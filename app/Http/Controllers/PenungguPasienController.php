@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\PenungguPasien;
 use App\Verifikasi;
+use App\UserPemohon;
+use Illuminate\Support\Facades\Hash;
 
 class PenungguPasienController extends Controller
 {
@@ -15,7 +17,7 @@ class PenungguPasienController extends Controller
      */
     public function index()
     {
-        $penunggupasiens = PenungguPasien::all();
+        $penunggupasiens = PenungguPasien::where('keterangan', 'Belum Terverifikasi')->get();
         return view('admin.penunggu_pasien.index', compact('penunggupasiens'));
     }
 
@@ -44,6 +46,13 @@ class PenungguPasienController extends Controller
             $penunggupasien = new PenungguPasien();
             $penunggupasien->nama = $request->nama;
             $penunggupasien->nik = $request->nik;
+            $penunggupasien->ktp_pemohon = $request->ktp_pemohon;
+            $penunggupasien->alamat_pemohon = $request->alamat_pemohon;
+            $penunggupasien->nohp = $request->nohp;
+            $penunggupasien->email = $request->email;
+            $penunggupasien->nama_pasien = $request->nama_pasien;
+            $penunggupasien->ktp_pasien = $request->ktp_pasien;
+            $penunggupasien->alamat_pasien = $request->alamat_pasien;
             $penunggupasien->tanggal = $request->tanggal;
             $penunggupasien->surat_permohonan = $request->surat_permohonan;
             $penunggupasien->kk_pemohon = $request->kk_pemohon;
@@ -70,7 +79,7 @@ class PenungguPasienController extends Controller
      */
     public function show(PenungguPasien $penunggupasien)
     {
-        return view('admin.penunggu_pasien.verifikasi', compact('penunggupasien'));
+        return view('admin.penunggu_pasien.detail', compact('penunggupasien'));
     }
 
     /**
@@ -99,6 +108,13 @@ class PenungguPasienController extends Controller
             $request->validate([
                 'nama' => 'required',
                 'nik' => 'required',
+                'ktp_pemohon' => 'required',
+                'alamat_pemohon' => 'required',
+                'nohp' => 'required',
+                'email' => 'required',
+                'nama_pasien' => 'required',
+                'ktp_pasien' => 'required',
+                'alamat_pasien' => 'required',
                 'tanggal' => 'required',
                 'surat_permohonan' => 'required',
                 'kk_pemohon' => 'required',
@@ -110,6 +126,13 @@ class PenungguPasienController extends Controller
             $request->validate([
                 'nama' => 'required',
                 'nik' => 'required',
+                'ktp_pemohon' => 'required',
+                'alamat_pemohon' => 'required',
+                'nohp' => 'required',
+                'email' => 'required',
+                'nama_pasien' => 'required',
+                'ktp_pasien' => 'required',
+                'alamat_pasien' => 'required',
                 'tanggal' => 'required',
                 'surat_permohonan' => 'required',
                 'kk_pemohon' => 'required',
@@ -129,6 +152,14 @@ class PenungguPasienController extends Controller
         
         $penunggupasien = PenungguPasien::findOrFail ($id);
         $penunggupasien->nama = $request->nama;
+        $penunggupasien->nik = $request->nik;
+        $penunggupasien->ktp_pemohon = $request->ktp_pemohon;
+        $penunggupasien->alamat_pemohon = $request->alamat_pemohon;
+        $penunggupasien->nohp = $request->nohp;
+        $penunggupasien->email = $request->email;
+        $penunggupasien->nama_pasien = $request->nama_pasien;
+        $penunggupasien->ktp_pasien = $request->ktp_pasien;
+        $penunggupasien->alamat_pasien = $request->alamat_pasien;
         $penunggupasien->tanggal = $request->tanggal;
         $penunggupasien->surat_permohonan = $request->surat_permohonan;
         $penunggupasien->kk_pemohon = $request->kk_pemohon;
@@ -151,6 +182,8 @@ class PenungguPasienController extends Controller
 
         $penunggupasien->save();
 
+        // PenungguPasien::where('id',$id)->update(['keterangan'=>"terverifikasi"]);
+
         return redirect(route('penunggupasiens.index'))->with('success', 'Data Pemohon berhasil diubah');
     }
 
@@ -172,10 +205,41 @@ class PenungguPasienController extends Controller
         return redirect(route('penunggupasiens.index'))->with('success', 'Data Berhasil Dihapus');
     }
 
-    public function verifikasi(PenungguPasien $penunggupasien)
+    public function verifikasi(Request $request, $id)
     {
-        $verifikasis = Verifikasi::all();
-        return view('admin.penunggu_pasien.verifikasi', compact('penunggupasien', 'verifikasis'));
+        PenungguPasien::where('id',$id)->update(['keterangan'=>"terverifikasi"]);
+        
+        // menambahkan user pemohon ke tb userpemohon
+        $penunggupasien = PenungguPasien::where('id', $id)->first();
+        UserPemohon::create([
+            'nama' => $penunggupasien->nama,
+            'nik' => $penunggupasien->nik,
+            'password' => Hash::make($penunggupasien->nik)
+        ]);
+
+        return redirect(route('penunggupasiens.index'))->with('success', 'Data berhasil diverifikasi');
+    }
+
+    public function showVerifikasi()
+    {
+        $verifikasi = PenungguPasien::where('keterangan', 'Terverifikasi')->get();
+        return view('admin.verifikasi.index', compact('verifikasi'));
+    }
+
+    public function detailVerifikasi($id)
+    {
+        $penunggupasien = PenungguPasien::where('id',$id)->first();
+        // echo json_encode($penunggupasien);
+        return view('admin.verifikasi.detail', compact('penunggupasien'));
+    }
+
+    public function destroyVerifikasi($id)
+    {
+        $verifikasi = PenungguPasien::find($id);
+        $verifikasi->delete();
+
+        // return view('admin.verifikasi.index')->with('success', 'Data Berhasil Dihapus');
+        return redirect('/verifikasi')->with('success', 'Data Berhasil Dihapus');
     }
 
     /**
