@@ -52,7 +52,7 @@
                                 <td class="text-align:center">
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pembayarans.destroy', $pembayaran->id) }}"method="POST">
                                         <!-- <a href="{{ route('penunggupasiens.edit', $pembayaran->id) }}" class="btn btn-sm btn-primary">Show</a> -->
-                                        <a href="" class="btn btn-sm btn-primary">Show</a>
+                                        <a href="{{ route('pembayarans.show', $pembayaran->id) }}" class="btn btn-sm btn-primary">Show</a>
                                         <a href="{{ route('pembayarans.edit', $pembayaran->id) }}" class="btn btn-sm btn-primary">Pembayaran</a>
                                         <!-- <a href="{{ route('penunggupasiens.show', $pembayaran->id) }}" class="btn btn-sm btn-success waves-effect m-r-20">Show</a>
  -->                                        @csrf

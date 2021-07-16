@@ -13,12 +13,12 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box bg-pink hover-expand-effect">
                         <div class="icon">
-                            <i class="material-icons">assignment</i>
+                            <i class="material-icons">assignment </i>
                         </div>
                         <div class="content">
                             <div class="text">DATA PEMOHON</div>
-                            <h3>{{ DB::table('penunggu_pasiens')->count() }}</h3>
-                            <!-- <div class="number count-to" data-from="0"  data-to="125" data-speed="15" data-fresh-interval="20"></div> -->
+                            <!-- <h3>{{ DB::table('penunggu_pasiens')->count() }}</h3> -->
+                            <div class="number count-to" data-from="0"  data-to="125" data-speed="15" data-fresh-interval="20"> {{ DB::table('penunggu_pasiens')->count() }} </div>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,8 @@
                         </div>
                         <div class="content">
                             <div class="text">DATA PEMBAYARAN</div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            <!-- <h3>{{ DB::table('penunggu_pasiens')->count() }}</h3> -->
+                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20">{{ DB::table('pembayarans')->count() }} </div>
                         </div>
                     </div>
                 </div>

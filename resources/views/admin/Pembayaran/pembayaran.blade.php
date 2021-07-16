@@ -100,7 +100,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>JUMLAH DANA BANTUAN</label>
-                                        <input type="text" name="jumlah_bantuan" placeholder="Masukan Jumlah Dana Bantuan" class="form-control" required>
+                                        <input type="text" name="jumlah_bantuan" placeholder="Masukan Jumlah Dana Bantuan" value="{{ $pembayaran->jumlah_bantuan }}" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
