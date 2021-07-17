@@ -22,15 +22,15 @@
 	</style>
 </head>
 <body>
-    @foreach($surat as $s)
+    @foreach($pembayaran as $s)
 	<center>
 		<table>
 			<tr>
-				<td><img src="https://disdukcapil.tegalkab.go.id/pelayanan/assets/img/kab/3328.png" width="90" height="90"></td>
+				<!-- <td><img src="https://disdukcapil.tegalkab.go.id/pelayanan/assets/img/kab/3328.png" width="90" height="90"></td> -->
 				<td>
 				<center>
 					<font size="4">PEMERINTAHAN KOTA TEGAL</font><br>
-					<font size="5"><b>DINAS KEPENDUDUKAN KOTA TEGAL</b></font><br>
+					<font size="5"><b>DINAS SOSIAL KOTA TEGAL</b></font><br>
 					{{-- <font size="2">Bidang Keahlian : Bisnis dan Menejemen - Teknologi informasi dan Komunikasi</font><br> --}}
 					<font size="2"><i>Jln Cut Nya'Dien No. 02 Kode Pos : 68173 Telp./Fax (0331)758005 Tempurejo Jember Jawa Timur</i></font>
 				</center>
@@ -41,65 +41,43 @@
 			</tr>
 		<table width="625">
 			<tr>
-				<td class="text2">{{$s->tempat_surat}}, {{$s->tgl_surat}}</td>
+				<!-- <td class="text2">{{$s->tempat_surat}}, {{$s->tgl_surat}}</td> -->
+                <td>
+                    <center>
+                        <font size="2">KUITANSI TANDA TERIMA</font><br>
+                        <font size="2">PEMBERIAN DANA BANTUAN PENUNGGU PASIEN</font><br>
+                    </center>
+                </td>
 			</tr>
 		</table>
 		</table>
 		<table>
 			<tr class="text2">
-				<td>Nomer</td>
-				<td width="572">: {{$s->no_surat}}</td>
+				<td>Nomor</td>
+				<td width="572">: {{ $s->id }}</td>
+			</tr>
+            <tr>
+				<td>Uang Sebanyak</td>
+				<td width="564">: Pemerintah Kota Tegal</td>
 			</tr>
 			<tr>
-				<td>Perihal</td>
-				<td width="564">: {{$s->perihal}}</td>
+				<td>Uang Sebanyak</td>
+				<td width="564">: {{$s->jumlah_bantuan}}</td>
 			</tr>
-		</table>
-		<br>
-		<table width="625">
-			<tr>
-		       <td>
-			       <font size="2">Kpd yth.<br>{{$s->tujuan_surat}}<br>Di tempat</font>
-		       </td>
-		    </tr>
-		</table>
-		<br>
-		<table width="625">
-			<tr>
-		       <td>
-			       <font size="2">{{$s->salam_pembuka}}<br>{{$s->isi}}</font>
-		       </td>
-		    </tr>
-		</table>
-		<br>
-		</table>
-		<table>
-			<tr class="text2">
-				<td>Hari Tanggal</td>
-				<td width="541">: {{$s->hari_tgl}}</td>
-			</tr>
-			<tr>
-				<td>Jam</td>
-				<td width="525">: {{$s->waktu}}</td>
-			</tr>
-			<tr>
-				<td>Tempat</td>
-				<td width="525">: {{$s->tempat}}</td>
+            <tr>
+				<td>Untuk Pembayaran</td>
+				<td width="564">: Bantuan sosial bagi penunggu pasien ataas nama {{$s->nama}} untuk tanggal {{$s->nik}} s/d {{$s->nik}}</td>
 			</tr>
 		</table>
 		<br>
 		<table width="625">
-			<tr>
-		       <td>
-			       <font size="2">{{$s->salam_penutup}}</font>
-		       </td>
-		    </tr>
-		</table>
-		<br>
-		<table width="625">
+            <tr>
+				<td width="564"><br><br><br><br></td>
+				<td class="text" align="center">Kepala Dinas<br><br><br><br>{{$s->nama}}</td>
+			</tr>
 			<tr>
 				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Kepala Dinas<br><br><br><br>{{$s->tertanda}}</td>
+				<td class="text" align="center">Kepala Dinas<br><br><br><br>{{$s->nama}}</td>
 			</tr>
 	     </table>
 	</center>

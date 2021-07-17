@@ -46,9 +46,11 @@ class PembayaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Pembayaran $pembayaran)
+    public function show($id)
     {
-        return view('admin.pembayaran.detail', compact('pembayaran'));
+        $pembayaran = Pembayaran::where('id',$id)->get();
+        return view('admin.pembayaran.cetak', ['pembayaran' => $pembayaran]);
+        // return view('admin.pembayaran.detail', compact('pembayaran'));
     }
 
     /**
