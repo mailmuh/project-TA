@@ -74,7 +74,11 @@
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('penunggupasiens.destroy', $penunggupasien->id) }}"method="POST">
                                         <a href="{{ route('penunggupasiens.show', $penunggupasien->id) }}" class="btn btn-sm btn-info">Show</a>    
                                         <a href="{{ route('penunggupasiens.edit', $penunggupasien->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                        <a class="btn btn-success" data-toggle="modal" data-target="#tambahklasifikasi">Verifikasi</a>
+                                        @if(Auth::User()->role === 'admindinsos')
+                                            <a class="btn btn-success" data-toggle="modal" data-target="#tambahklasifikasi">Verifikasi</a>
+                                        @elseif(Auth::User()->role === 'superadmin')
+                                            <a class="btn btn-success" data-toggle="modal" data-target="#tambahklasifikasi">Verifikasi</a>
+                                        @endif
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger waves-effect m-r-20">Delete</button>

@@ -21,6 +21,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::Resource('penunggupasiens', 'PenungguPasienController');
     Route::Resource('verifikasis', 'VerifikasiController');
     Route::Resource('pembayarans', 'PembayaranController');
+    Route::Resource('userpemohons', 'UserPemohonController');
+    Route::Resource('useradmins', 'UserController');
 
     // Route::get('penunggupasiens', 'PenungguPasienController@verifikasi');
     Route::get('/verifikasi', 'PenungguPasienController@showVerifikasi');
@@ -43,3 +45,31 @@ Route::group(['middleware' => ['auth']], function() {
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+
+///////////////////////////////////////////////
+
+// Route::get('/', function () {
+//     return view('auth.login');
+// }); 
+
+
+// Auth::routes();
+
+// Route::group(['middleware' => ['auth','checkRole:superadmin,admindinsos,adminkardinah']], function () {
+
+//     Route::Resource('penunggupasiens', 'PenungguPasienController');
+
+// });
+
+// Route::group(['middleware' => ['auth','checkRole:superadmin, admindinsos']], function () {
+//     Route::Resource('verifikasis', 'VerifikasiController');
+//     Route::Resource('pembayarans', 'PembayaranController');
+//     Route::Resource('userpemohons', 'UserPemohonController');
+//     Route::Resource('useradmins', 'UserController');
+
+//     // Route::get('penunggupasiens', 'PenungguPasienController@verifikasi');
+//     Route::get('/verifikasi', 'PenungguPasienController@showVerifikasi');
+//     Route::get('/verifikasi/{id}/detail', 'PenungguPasienController@detailVerifikasi')->name('verifikasi.detail');
+//     Route::put('/verifikasi/{id}', 'PenungguPasienController@verifikasi')->name('penunggupasiens.verifikasi');
+//     Route::delete('/verifikasi/{id}', 'PenungguPasienController@destroyVerifikasi')->name('verifikasi.destroyVerifikasi');
+// });

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
-use App\UserPemohon;
+use Illuminate\Support\Facades\Hash;
+use App\User;
 
-class UserPemohonController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class UserPemohonController extends Controller
      */
     public function index()
     {
-        $userpemohons = UserPemohon::all();
-        return view('admin.user_pemohon.index', compact('userpemohons'));
+        $useradmins = User::all();
+        return view('admin.user.index', compact('useradmins'));
     }
 
     /**
@@ -26,7 +26,8 @@ class UserPemohonController extends Controller
      */
     public function create()
     {
-        //
+        $useradmins = User::all();
+        return view('admin.user.create');
     }
 
     /**
@@ -37,7 +38,15 @@ class UserPemohonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        User::create([
+            'name' => $request->input("name"),
+            'email' => $request->input("email"),
+            'role' => $request->input("role"),
+            'password' => Hash::make($request->input("email"))]
+        );
+
+        return redirect()->route('useradmins.index');
     }
 
     /**
@@ -59,8 +68,8 @@ class UserPemohonController extends Controller
      */
     public function edit($id)
     {
-        $userpemohon = UserPemohon::findOrFail($id);
-        return view('admin.user_pemohon.edit', compact('userpemohon'));
+        $useradmin = User::findOrFail($id);
+        return view('admin.user.edit', compact('useradmin'));
     }
 
     /**
@@ -70,21 +79,23 @@ class UserPemohonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserPemohon $userpemohon)
+    public function update(Request $request, User $useradmin)
     {
         $request->validate([
-            'nama' => 'required',
-            'nik' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
             'password' => 'required',
         ]);
 
-        $data = $userpemohon;
-        $data->nama = $request->nama;
-        $data->nik = $request->nik;
+        $data = $useradmin;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->role = $request->role;
         $data->password = $request->password;
         $data->update();
 
-        return redirect()->route('userpemohons.index')->with('success', 'Data berhasil diubah');
+        return redirect()->route('useradmins.index')->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -95,9 +106,9 @@ class UserPemohonController extends Controller
      */
     public function destroy($id)
     {
-        $userpemohon = UserPemohon::find($id);
-        $userpemohon->delete();
+        $useradmin = User::find($id);
+        $useradmin->delete();
 
-        return redirect(route('userpemohons.index'))->with('success', 'Data Berhasil Dihapus');
+        return redirect(route('useradmins.index'))->with('success', 'Data Berhasil Dihapus');
     }
 }
