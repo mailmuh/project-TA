@@ -35,22 +35,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>KTP PEMOHON</label>
-                                        <input type="text" name="ktp_pemohon" placeholder="Masukan KTP Pemohon" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
                                         <label>ALAMAT PEMOHON</label>
                                         <input type="text" name="alamat_pemohon" placeholder="Masukan Alamat Pemohon" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
@@ -59,6 +48,8 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
@@ -67,21 +58,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>NAMA PASIEN</label>
                                         <input type="text" name="nama_pasien" placeholder="Masukan Nama Pasien" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>KTP PASIEN</label>
-                                        <input type="text" name="ktp_pasien" placeholder="Masukan KTP Pasien" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
@@ -95,16 +76,27 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        
+                        <div class="row clearfix">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label>Tanggal Awal Perawatan</label>
+                                        <input type="date" name="awal_perawatan" placeholder="Masukan KTP Pemohon" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>TANGGAL</label>
-                                        <input type="date" name="tanggal" placeholder="Masukan Tanggal" class="form-control" required>
+                                        <label>Tanggal Akhir Perawatan</label>
+                                        <input type="date" name="akhir_perawatan" placeholder="Masukan KTP Pasien" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -117,32 +109,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>KK PEMOHON</label>
-                                        <input type="text" name="kk_pemohon" placeholder="Masukan KTP Pasien" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>KK PASIEN</label>
-                                        <input type="text" name="kk_pasien" placeholder="Masukan Nama Pasien" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
                                         <label>SEP</label>
                                         <input type="text" name="sep" placeholder="Masukan Surat Elegibilitas Peserta" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
@@ -151,9 +124,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">

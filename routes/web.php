@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
+Route::get('/', 'FrontendController@index');
+
+Route::get('/cari', 'FrontendController@cari');
+Route::get('/cari/getnik', 'FrontendController@carinik');
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
 
     Route::Resource('penunggupasiens', 'PenungguPasienController');
     Route::Resource('verifikasis', 'VerifikasiController');

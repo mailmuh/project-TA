@@ -51,24 +51,24 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row clearfix">
+                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>NOMOR HP</label>
-                                        <input type="text" name="nohp" placeholder="Masukan Nomor Handphone Pemohon" value="{{ $pembayaran->nohp }}" class="form-control" required>
+                                        <label>Awal Perawatan</label>
+                                        <input type="date" name="awal" placeholder="Masukan Nomor Handphone Pemohon" value="{{ $pembayaran->awal_perawatan }}" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>EMAIL</label>
-                                        <input type="text" name="email" placeholder="Masukan Email Pemohon" value="{{ $pembayaran->email }}" class="form-control" required>
+                                        <label>Akhir Perawatan</label>
+                                        <input type="date" name="akhir" placeholder="Masukan Email Pemohon" value="{{ $pembayaran->akhir_perawatan }}" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -81,77 +81,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>KTP PASIEN</label>
-                                        <input type="text" name="ktp_pasien" placeholder="Masukan KTP Pasien" value="{{ $pembayaran->ktp_pasien }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <!-- <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>TANGGAL</label>
-                                        <input type="date" name="tanggal" placeholder="Masukan Tanggal" value="{{ $pembayaran->tanggal }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
                                         <label>JUMLAH DANA BANTUAN</label>
                                         <input type="text" name="jumlah_bantuan" placeholder="Masukan Jumlah Dana Bantuan" value="{{ $pembayaran->jumlah_bantuan }}" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>SURAT PERMOHONAN</label>
-                                        <input type="text" name="surat_permohonan" placeholder="Masukan Nama Pasien" value="{{ $pembayaran->surat_permohonan }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>KK PEMOHON</label>
-                                        <input type="text" name="kk_pemohon" placeholder="Masukan KTP Pasien" value="{{ $pembayaran->kk_pemohon }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>KK PASIEN</label>
-                                        <input type="text" name="kk_pasien" placeholder="Masukan Nama Pasien" value="{{ $pembayaran->kk_pasien }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>SEP</label>
-                                        <input type="text" name="sep" placeholder="Masukan Surat Elegibilitas Peserta" value="{{ $pembayaran->sep }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>SURAT KUASA</label>
-                                        <input type="text" name="surat_kuasa" placeholder="Masukan Surat Kuasa" value="{{ $pembayaran->surat_kuasa }}" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         
                         <a href="{{ route('penunggupasiens.index') }}" class="btn btn-sm btn-success waves-effect m-r-20">Back</a>
                         <button type="submit" class="btn btn-sm btn-primary waves-effect m-r-20">Save & Update</button>

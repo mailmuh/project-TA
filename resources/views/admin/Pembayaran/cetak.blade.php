@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CETAK SURAT</title>
+	<title>CETAK KUITANSI</title>
 	<style type="text/css">
 		table {
 			border-style: double;
@@ -26,13 +26,13 @@
 	<center>
 		<table>
 			<tr>
-				<!-- <td><img src="https://disdukcapil.tegalkab.go.id/pelayanan/assets/img/kab/3328.png" width="90" height="90"></td> -->
+				<td><img src="{{asset('assets/images/dinsos.png')}}" width="110" height="90"></td>
 				<td>
 				<center>
 					<font size="4">PEMERINTAHAN KOTA TEGAL</font><br>
 					<font size="5"><b>DINAS SOSIAL KOTA TEGAL</b></font><br>
 					{{-- <font size="2">Bidang Keahlian : Bisnis dan Menejemen - Teknologi informasi dan Komunikasi</font><br> --}}
-					<font size="2"><i>Jln Cut Nya'Dien No. 02 Kode Pos : 68173 Telp./Fax (0331)758005 Tempurejo Jember Jawa Timur</i></font>
+					<font size="2"><i>Jl. Sipelem No.2, Pekauman, Kec. Tegal Barat, Kota Tegal, Jawa Tengah Kode Pos : 52112</i></font>
 				</center>
 				</td>
 			</tr>
@@ -57,7 +57,7 @@
 				<td width="572">: {{ $s->id }}</td>
 			</tr>
             <tr>
-				<td>Uang Sebanyak</td>
+				<td>Telah Terima Dari</td>
 				<td width="564">: Pemerintah Kota Tegal</td>
 			</tr>
 			<tr>
@@ -66,11 +66,21 @@
 			</tr>
             <tr>
 				<td>Untuk Pembayaran</td>
-				<td width="564">: Bantuan sosial bagi penunggu pasien ataas nama {{$s->nama}} untuk tanggal {{$s->nik}} s/d {{$s->nik}}</td>
+				<td width="564">: Bantuan sosial bagi penunggu pasien ataas nama {{$s->nama}} untuk tanggal {{$s->awal_perawatan}} s/d {{$s->akhir_perawatan}}</td>
 			</tr>
 		</table>
 		<br>
 		<table width="625">
+			<tr>
+				<td width="430"><br><br><br><br></td>
+				<td class="text" align="center">Yang Menerima, <br><br><br><br>{{ $s->nama }}</td>
+			</tr>
+			<tr>
+				<td width="430"><br><br><br><br></td>
+				<td class="text" align="center">Yang Menyerahkan, <br><br><br><br>Basuki, S.E.,M.M</td>
+			</tr>
+	     </table>
+		<!-- <table width="625">
             <tr>
 				<td width="564"><br><br><br><br></td>
 				<td class="text" align="center">Kepala Dinas<br><br><br><br>{{$s->nama}}</td>
@@ -79,7 +89,7 @@
 				<td width="430"><br><br><br><br></td>
 				<td class="text" align="center">Kepala Dinas<br><br><br><br>{{$s->nama}}</td>
 			</tr>
-	     </table>
+	     </table> -->
 	</center>
     @endforeach
     <script type="text/javascript">

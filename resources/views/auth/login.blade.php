@@ -11,7 +11,8 @@
             <div class="body">
                 <form id="sign_in" method="POST" action="{{ route('login') }}">
                     @csrf
-                    <div class="msg">Sign in to start your session</div>
+                    <!-- <div class="msg">Sign in to start your session</div> -->
+                    <center><img src="{{ asset('assetsfrontend/images/logo_pemkot.png') }}" alt="center" width="75"></center><br><br>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -46,15 +47,15 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-8 p-t-5">
-                            {{-- <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink"> --}}
+                            <!-- {{-- <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink"> --}}
                             <input class="filled-in chk-col-pink" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label for="rememberme">Remember Me</label>
+                            <label for="rememberme">Remember Me</label> -->
                         </div>
                         <div class="col-xs-4">
                             <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
                         </div>
                     </div>
-                    <div class="row m-t-15 m-b--20">
+                    <!-- <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
                             <a href="/register">Register Now!</a>
                         </div>
@@ -64,7 +65,7 @@
                                 {{ __('Forgot Your Password?') }}
                             </a> --}}
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>

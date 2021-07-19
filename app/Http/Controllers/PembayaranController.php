@@ -74,25 +74,22 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, Pembayaran $pembayaran)
     {
+        // dd($request->awal);
         $request->validate([
             'nama' => 'required',
             'nik' => 'required',
-            // 'ktp_pemohon' => 'required',
             'alamat_pemohon' => 'required',
             'nohp' => 'required',
             'nama_pasien' => 'required',
-            'ktp_pasien' => 'required',
             'jumlah_bantuan' => 'required',
         ]);
 
         $data = $pembayaran;
         $data->nama = $request->nama;
         $data->nik = $request->nik;
-        // $data->ktp_pemohon = $request->ktp_pemohon;
         $data->alamat_pemohon = $request->alamat_pemohon;
         $data->nohp = $request->nohp;
         $data->nama_pasien = $request->nama_pasien;
-        $data->ktp_pasien = $request->ktp_pasien;
         $data->jumlah_bantuan = $request->jumlah_bantuan;
         $data->update();
 

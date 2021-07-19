@@ -39,10 +39,6 @@
                                 <th scope="col">NIK</th>
                                 <th scope="col">TANGGAL</th>
                                 <th scope="col">SURAT PERMOHONAN</th>
-                                <th scope="col">KK PEMOHON</th>
-                                <!-- <th scope="col">KK PASIEN</th>
-                                <th scope="col">SEP</th>
-                                <th scope="col">SURAT KUASA</th> -->
                                 <th scope="col">SURAT KETERANGAN</th>
                                 <th scope="col">KETERANGAN</th>
                                 <th scope="col">AKSI</th>
@@ -56,10 +52,6 @@
                                 <td>{{ $penunggupasien->nik }}</td>
                                 <td>{{ $penunggupasien->tanggal }}</td>
                                 <td>{{ $penunggupasien->surat_permohonan }}</td>
-                                <td>{{ $penunggupasien->kk_pemohon }}</td>
-                                <!-- <td>{{ $penunggupasien->kk_pasien }}</td>
-                                <td>{{ $penunggupasien->sep }}</td>
-                                <td>{{ $penunggupasien->surat_kuasa }}</td> -->
                                 <td>
                                     @if($penunggupasien->surat_keterangan!= NULL)
                                        <img src="{{ asset($penunggupasien->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto">
@@ -85,7 +77,7 @@
                                     </form>
                                 </td>
 
-                                <!--modal konfirmasi-->
+                                <!--modal Verifikasi-->
                                 <div class="modal fade" id="tambahklasifikasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog" role="document">

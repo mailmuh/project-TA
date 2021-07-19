@@ -7,6 +7,7 @@ use App\PenungguPasien;
 use App\Verifikasi;
 use App\UserPemohon;
 use App\Pembayaran;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 class PenungguPasienController extends Controller
@@ -41,23 +42,20 @@ class PenungguPasienController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $fileNameSK =  'Gambar-'.request()->surat_keterangan->getClientOriginalName();
         
             $penunggupasien = new PenungguPasien();
             $penunggupasien->nama = $request->nama;
             $penunggupasien->nik = $request->nik;
-            $penunggupasien->ktp_pemohon = $request->ktp_pemohon;
             $penunggupasien->alamat_pemohon = $request->alamat_pemohon;
             $penunggupasien->nohp = $request->nohp;
             $penunggupasien->email = $request->email;
             $penunggupasien->nama_pasien = $request->nama_pasien;
-            $penunggupasien->ktp_pasien = $request->ktp_pasien;
             $penunggupasien->alamat_pasien = $request->alamat_pasien;
-            $penunggupasien->tanggal = $request->tanggal;
+            $penunggupasien->awal_perawatan = $request->awal_perawatan;
+            $penunggupasien->akhir_perawatan = $request->akhir_perawatan;
             $penunggupasien->surat_permohonan = $request->surat_permohonan;
-            $penunggupasien->kk_pemohon = $request->kk_pemohon;
-            $penunggupasien->kk_pasien = $request->kk_pasien;
             $penunggupasien->sep = $request->sep;
             $penunggupasien->surat_kuasa = $request->surat_kuasa;
             
@@ -114,17 +112,15 @@ class PenungguPasienController extends Controller
             $request->validate([
                 'nama' => 'required',
                 'nik' => 'required',
-                'ktp_pemohon' => 'required',
                 'alamat_pemohon' => 'required',
                 'nohp' => 'required',
                 'email' => 'required',
                 'nama_pasien' => 'required',
-                'ktp_pasien' => 'required',
+                'nik_pasien' => 'required',
                 'alamat_pasien' => 'required',
-                'tanggal' => 'required',
+                'awal_perawatan' => 'required',
+                'akhir_perawatan' => 'required',
                 'surat_permohonan' => 'required',
-                'kk_pemohon' => 'required',
-                'kk_pasien' => 'required',
                 'sep' => 'required',
                 'surat_kuasa' => 'required',
             ]);
@@ -132,17 +128,15 @@ class PenungguPasienController extends Controller
             $request->validate([
                 'nama' => 'required',
                 'nik' => 'required',
-                'ktp_pemohon' => 'required',
                 'alamat_pemohon' => 'required',
                 'nohp' => 'required',
                 'email' => 'required',
                 'nama_pasien' => 'required',
-                'ktp_pasien' => 'required',
+                'nik_pasien' => 'required',
                 'alamat_pasien' => 'required',
-                'tanggal' => 'required',
+                'awal_perawatan' => 'required',
+                'akhir_perawatan' => 'required',
                 'surat_permohonan' => 'required',
-                'kk_pemohon' => 'required',
-                'kk_pasien' => 'required',
                 'sep' => 'required',
                 'surat_kuasa' => 'required',
                 'surat_keterangan' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -159,17 +153,15 @@ class PenungguPasienController extends Controller
         $penunggupasien = PenungguPasien::findOrFail ($id);
         $penunggupasien->nama = $request->nama;
         $penunggupasien->nik = $request->nik;
-        $penunggupasien->ktp_pemohon = $request->ktp_pemohon;
         $penunggupasien->alamat_pemohon = $request->alamat_pemohon;
         $penunggupasien->nohp = $request->nohp;
         $penunggupasien->email = $request->email;
         $penunggupasien->nama_pasien = $request->nama_pasien;
-        $penunggupasien->ktp_pasien = $request->ktp_pasien;
+        $penunggupasien->nik_pasien = $request->nik_pasien;
         $penunggupasien->alamat_pasien = $request->alamat_pasien;
-        $penunggupasien->tanggal = $request->tanggal;
+        $penunggupasien->awal_perawatan = $request->awal_perawatan;
+        $penunggupasien->akhir_perawatan = $request->akhir_perawatan;
         $penunggupasien->surat_permohonan = $request->surat_permohonan;
-        $penunggupasien->kk_pemohon = $request->kk_pemohon;
-        $penunggupasien->kk_pasien = $request->kk_pasien;
         $penunggupasien->sep = $request->sep;
         $penunggupasien->surat_kuasa = $request->surat_kuasa;
         if ($request->hasFile('surat_keterangan')) {
@@ -224,15 +216,27 @@ class PenungguPasienController extends Controller
         // ]);
 
         // menambahkan data ke tabel pembayaran
+        
         $penunggupasien = PenungguPasien::where('id', $id)->first();
+        // dd($penunggupasien->awal_perawatan);
+
+        $startDate = \Carbon\Carbon::createFromFormat('Y-m-d', $penunggupasien->awal_perawatan);
+
+        $endDate = \Carbon\Carbon::createFromFormat('Y-m-d', $penunggupasien->akhir_perawatan);
+
+        $selisih =  $startDate->diffInDays($endDate);
+        // dd($selisih);s
+
         Pembayaran::create([
+            $penunggupasien->id = $id,
             'nama' => $penunggupasien->nama,
             'nik' => $penunggupasien->nik,
-            'ktp_pemohon' => $penunggupasien->ktp_pemohon,
             'alamat_pemohon' => $penunggupasien->alamat_pemohon,
             'nohp' => $penunggupasien->nohp,
             'nama_pasien' => $penunggupasien->nama_pasien,
-            'ktp_pasien' => $penunggupasien->ktp_pasien,
+            'awal_perawatan' => $penunggupasien->awal_perawatan,
+            'akhir_perawatan' => $penunggupasien->akhir_perawatan,
+            'jumlah_bantuan' => $selisih >= 4 ? 200000 : $selisih * 50000,
         ]);
 
         return redirect(route('penunggupasiens.index'))->with('success', 'Data berhasil diverifikasi');

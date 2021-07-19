@@ -34,8 +34,8 @@
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
             @if(Auth::User()->role === 'superadmin')
-            <li class="{{ Request::is('/')?'active':'' }}">
-                <a href="/">
+            <li class="{{ Request::is('home')?'active':'' }}">
+                <a href="/home">
                     <i class="material-icons">home</i>
                     <span>Home</span>
                 </a>
@@ -73,8 +73,8 @@
                 </ul>
             </li>
             @elseif(Auth::User()->role === 'admindinsos')
-            <li class="{{ Request::is('/')?'active':'' }}">
-                <a href="/">
+            <li class="{{ Request::is('home')?'active':'' }}">
+                <a href="/home">
                     <i class="material-icons">home</i>
                     <span>Home</span>
                 </a>
@@ -112,8 +112,8 @@
                 </ul>
             </li>
             @elseif(Auth::user()->role === 'adminkardinah')
-            <li class="{{ Request::is('/')?'active':'' }}">
-                <a href="/">
+            <li class="{{ Request::is('home')?'active':'' }}">
+                <a href="/home">
                     <i class="material-icons">home</i>
                     <span>Home</span>
                 </a>
