@@ -1,12 +1,12 @@
 <aside id="rightsidebar" class="right-sidebar">
     <ul class="nav nav-tabs tab-nav-right" role="tablist">
         <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
-        <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+        <!-- <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li> -->
     </ul>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
             <ul class="demo-choose-skin">
-                <li data-theme="red" class="active">
+                <!-- <li data-theme="red">
                     <div class="red"></div>
                     <span>Red</span>
                 </li>
@@ -25,8 +25,8 @@
                 <li data-theme="indigo">
                     <div class="indigo"></div>
                     <span>Indigo</span>
-                </li>
-                <li data-theme="blue">
+                </li> -->
+                <li data-theme="blue" class="active">
                     <div class="blue"></div>
                     <span>Blue</span>
                 </li>
@@ -88,7 +88,7 @@
                 </li>
             </ul>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="settings">
+        <!-- <div role="tabpanel" class="tab-pane fade" id="settings">
             <div class="demo-settings">
                 <p>GENERAL SETTINGS</p>
                 <ul class="setting-list">
@@ -136,6 +136,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 </aside>
