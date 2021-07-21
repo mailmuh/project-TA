@@ -7,6 +7,11 @@ use App\Verifikasi;
 use App\PenungguPasien;
 use Illuminate\Support\Facades\Auth;
 
+// Panggil SendMail yang telah dibuat
+use App\Mail\SendMail;
+// Panggil support email dari Laravel
+use Illuminate\Support\Facades\Mail;
+
 class VerifikasiController extends Controller
 {
     /**
@@ -16,8 +21,8 @@ class VerifikasiController extends Controller
      */
     public function index()
     {
-        $verifikasis = Verifikasi::all();
-        return view('admin.verifikasi.index', compact('verifikasis'));
+        $verifikasi = PenungguPasien::all();
+        return view('admin.verifikasi.index', compact('verifikasi'));
     }
 
     /**
@@ -113,4 +118,20 @@ class VerifikasiController extends Controller
     {
         //
     }
+
+    public function kirim($id)
+    {
+        $penunggupasien = PenungguPasien::where('id',$id)->first(['nama', 'email' ]);
+        // echo json_encode($penunggupasien);
+        // return view('admin.verifikasi.email', compact('penunggupasien'));
+        // echo $id;
+
+        $nama = $penunggupasien->nama;
+        $email = $penunggupasien->email;
+        $kirim = Mail::to($email)->send(new SendMail($nama));
+        if($kirim){
+            echo "Email telah dikirim";
+        }
+    }
+
 }

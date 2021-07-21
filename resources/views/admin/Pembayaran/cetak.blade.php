@@ -54,28 +54,27 @@
 		<table>
 			<tr class="text2">
 				<td>Nomor</td>
-				<td width="572">: {{ $s->id }}</td>
+				<td >: {{ $s->id }}</td>
 			</tr>
             <tr>
 				<td>Telah Terima Dari</td>
-				<td width="564">: Pemerintah Kota Tegal</td>
+				<td >: Pemerintah Kota Tegal</td>
 			</tr>
 			<tr>
 				<td>Uang Sebanyak</td>
-				<td width="564">: {{$s->jumlah_bantuan}}</td>
+				<td >: {{$s->jumlah_bantuan}}</td>
 			</tr>
             <tr>
 				<td>Untuk Pembayaran</td>
-				<td width="564">: Bantuan sosial bagi penunggu pasien ataas nama {{$s->nama}} untuk tanggal {{$s->awal_perawatan}} s/d {{$s->akhir_perawatan}}</td>
+				<td >: Bantuan sosial bagi penunggu pasien ataas nama {{$s->nama}} untuk tanggal {{$s->awal_perawatan}} s/d {{$s->akhir_perawatan}}</td>
 			</tr>
 		</table>
-		<br>
+		<br><br><br>
 		<table width="625">
 			<tr>
-				<td width="430"><br><br><br><br></td>
+				<td ><br><br><br><br></td>
 				<td class="text" align="center">Yang Menerima, <br><br><br><br>{{ $s->nama }}</td>
-			</tr>
-			<tr>
+			
 				<td width="430"><br><br><br><br></td>
 				<td class="text" align="center">Yang Menyerahkan, <br><br><br><br>Basuki, S.E.,M.M</td>
 			</tr>

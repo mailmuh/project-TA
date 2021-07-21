@@ -37,8 +37,8 @@
                                     <th scope="col">NO</th>                            
                                     <th scope="col">NAMA</th>
                                     <th scope="col">NIK</th>
+                                    <th scope="col">EMAIL</th>
                                     <th scope="col">ALAMAT</th>
-                                    <th scope="col">SURAT KETERANGAN</th>
                                     <th scope="col">KETERANGAN</th>
                                     <th scope="col">AKSI</th>
                             </tr>
@@ -49,19 +49,21 @@
                                 <td>{{ $d+1 }}</td>
                                 <td>{{ $verifikasi->nama }}</td>
                                 <td>{{ $verifikasi->nik }}</td>
+                                <td>{{ $verifikasi->email }}</td>
                                 <td>{{ $verifikasi->alamat_pemohon }}</td>
-                                <td>
+                                <!-- <td>
                                     @if($verifikasi->surat_keterangan!= NULL)
                                        <img src="{{ asset($verifikasi->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto">
                                     @else
                                         <h5 style="color:red">Tidak ada Gambar</h5>
                                     @endif 
-                                </td>
+                                </td> -->
                                 <td>{{ $verifikasi->keterangan }}</td>
                                 <td class="text-align:center">
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('verifikasi.destroyVerifikasi', $verifikasi->id) }}"method="POST">
                                         <!-- <a href="{{ route('penunggupasiens.edit', $verifikasi->id) }}" class="btn btn-sm btn-primary">Show</a> -->
                                         <a href="{{ route('verifikasi.detail', $verifikasi->id) }}" class="btn btn-sm btn-primary">Detail</a>
+                                        <a href="{{ url('kirim-email', $verifikasi->id) }}" class="btn btn-sm btn-primary" target="_blank">Kirim Email</a>
                                         <!-- <a href="{{ route('pembayarans.edit', $verifikasi->id) }}" class="btn btn-sm btn-success">Pembayaran</a> -->
                                         <!-- <a href="" class="btn btn-sm btn-primary">Edit</a> -->
                                         <!-- <a href="{{ route('penunggupasiens.show', $verifikasi->id) }}" class="btn btn-sm btn-success waves-effect m-r-20">Show</a>

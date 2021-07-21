@@ -27,6 +27,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::Resource('pembayarans', 'PembayaranController');
     Route::Resource('userpemohons', 'UserPemohonController');
     Route::Resource('useradmins', 'UserController');
+    
+    Route::get('/kirim-email/{id}', 'VerifikasiController@kirim');
 
     // Route::get('penunggupasiens', 'PenungguPasienController@verifikasi');
     Route::get('/verifikasi', 'PenungguPasienController@showVerifikasi');

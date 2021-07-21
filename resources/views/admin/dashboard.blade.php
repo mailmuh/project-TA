@@ -29,7 +29,7 @@
                         </div>
                         <div class="content">
                             <div class="text">DATA VERIFIKASI</div>
-                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"> {{ DB::table('penunggu_pasiens')->distinct('keterangan')->count('terverifikasi') }}</div>
                         </div>
                     </div>
                 </div>
