@@ -19,7 +19,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>NAMA PEMOHON</label>
-                                        <input type="text" name="nama" placeholder="Masukan Nama Pemohon" value="{{ $penunggupasien->nama }}" class="form-control" required>
+                                        <input type="text" name="nama" placeholder="Masukan Nama Pemohon" class="form-control" value="{{ $penunggupasien->nama }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -27,44 +27,25 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>NIK PEMOHON</label>
-                                        <input type="text" name="nik" placeholder="Masukan NIK Pemohon" value="{{ $penunggupasien->nik }}" class="form-control" required>
+                                        <input type="text" name="nik" placeholder="Masukan NIK Pemohon" class="form-control" value="{{ $penunggupasien->nik }}" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>KTP PEMOHON</label>
-                                        <input type="text" name="ktp_pemohon" placeholder="Masukan KTP Pemohon" value="{{ $penunggupasien->ktp_pemohon }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>ALAMAT PEMOHON</label>
-                                        <input type="text" name="alamat_pemohon" placeholder="Masukan Alamat Pemohon" value="{{ $penunggupasien->alamat_pemohon }}" class="form-control" required>
+                                        <input type="text" name="alamat_pemohon" placeholder="Masukan Alamat Pemohon" class="form-control" value="{{ $penunggupasien->alamat_pemohon }}" required>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>NOMOR HP</label>
-                                        <input type="text" name="nohp" placeholder="Masukan Nomor Handphone Pemohon" value="{{ $penunggupasien->nohp }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>EMAIL</label>
-                                        <input type="text" name="email" placeholder="Masukan Email Pemohon" value="{{ $penunggupasien->email }}" class="form-control" required>
+                                        <input type="text" name="nohp" placeholder="Masukan Nomor Handphone Pemohon" class="form-control" value="{{ $penunggupasien->nohp }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -73,16 +54,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>NAMA PASIEN</label>
-                                        <input type="text" name="nama_pasien" placeholder="Masukan Nama Pasien" value="{{ $penunggupasien->nama_pasien }}" class="form-control" required>
+                                        <label>EMAIL</label>
+                                        <input type="text" name="email" placeholder="Masukan Email Pemohon" class="form-control" value="{{ $penunggupasien->email }}" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>KTP PASIEN</label>
-                                        <input type="text" name="ktp_pasien" placeholder="Masukan KTP Pasien" value="{{ $penunggupasien->ktp_pasien }}" class="form-control" required>
+                                        <label>NAMA PASIEN</label>
+                                        <input type="text" name="nama_pasien" placeholder="Masukan Nama Pasien" class="form-control" value="{{ $penunggupasien->nama_pasien }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -92,58 +73,50 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>ALAMAT PASIEN</label>
-                                        <input type="text" name="alamat_pasien" placeholder="Masukan Alamat Pasien" value="{{ $penunggupasien->alamat_pasien }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>TANGGAL</label>
-                                        <input type="date" name="tanggal" placeholder="Masukan Tanggal" value="{{ $penunggupasien->tanggal }}" class="form-control" required>
+                                        <input type="text" name="alamat_pasien" placeholder="Masukan Alamat Pasien" class="form-control" value="{{ $penunggupasien->alamat_pasien }}" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="row clearfix">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label>Tanggal Awal Perawatan</label>
+                                        <input type="date" name="awal_perawatan" placeholder="Masukan KTP Pemohon" class="form-control" value="{{ $penunggupasien->awal_perawatan }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label>Tanggal Akhir Perawatan</label>
+                                        <input type="date" name="akhir_perawatan" placeholder="Masukan KTP Pasien" class="form-control" value="{{ $penunggupasien->akhir_perawatan }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>SURAT PERMOHONAN</label>
-                                        <input type="text" name="surat_permohonan" placeholder="Masukan Nama Pasien" value="{{ $penunggupasien->surat_permohonan }}" class="form-control" required>
+                                        <input type="text" name="surat_permohonan" placeholder="Masukan Nama Pasien" class="form-control" value="{{ $penunggupasien->surat_permohonan }}" required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>KK PEMOHON</label>
-                                        <input type="text" name="kk_pemohon" placeholder="Masukan KTP Pasien" value="{{ $penunggupasien->kk_pemohon }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>KK PASIEN</label>
-                                        <input type="text" name="kk_pasien" placeholder="Masukan Nama Pasien" value="{{ $penunggupasien->kk_pasien }}" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label>SEP</label>
-                                        <input type="text" name="sep" placeholder="Masukan Surat Elegibilitas Peserta" value="{{ $penunggupasien->sep }}" class="form-control" required>
+                                        <input type="text" name="sep" placeholder="Masukan Surat Elegibilitas Peserta" class="form-control" value="{{ $penunggupasien->sep }}" required>
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
@@ -152,9 +125,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">

@@ -36,7 +36,7 @@
                                     <th scope="col">NIK</th>
                                     <th scope="col">ALAMAT</th>
                                     <th scope="col">NOMOR HP</th>
-                                    <th scope="col">JUMLAH</th>
+                                    <th scope="col">JUMLAH BANTUAN</th>
                                     <th scope="col">AKSI</th>
                             </tr>
                         </thead>

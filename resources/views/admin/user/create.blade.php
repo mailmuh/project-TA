@@ -46,8 +46,8 @@
                             </div>
                         </div>
 
-                        <a href="{{ route('penunggupasiens.index') }}" class="btn btn-sm btn-success waves-effect m-r-20">Back</a>
-                        <button type="submit" class="btn btn-sm btn-primary waves-effect m-r-20">Save & Update</button>
+                        <a href="{{ route('useradmins.index') }}" class="btn btn-sm btn-success waves-effect m-r-20">Back</a>
+                        <button type="submit" class="btn btn-sm btn-primary waves-effect m-r-20">Save</button>
                     </form>
                 </div>
             </div>

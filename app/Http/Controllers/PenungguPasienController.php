@@ -116,7 +116,6 @@ class PenungguPasienController extends Controller
                 'nohp' => 'required',
                 'email' => 'required',
                 'nama_pasien' => 'required',
-                'nik_pasien' => 'required',
                 'alamat_pasien' => 'required',
                 'awal_perawatan' => 'required',
                 'akhir_perawatan' => 'required',
@@ -132,7 +131,6 @@ class PenungguPasienController extends Controller
                 'nohp' => 'required',
                 'email' => 'required',
                 'nama_pasien' => 'required',
-                'nik_pasien' => 'required',
                 'alamat_pasien' => 'required',
                 'awal_perawatan' => 'required',
                 'akhir_perawatan' => 'required',
@@ -157,7 +155,6 @@ class PenungguPasienController extends Controller
         $penunggupasien->nohp = $request->nohp;
         $penunggupasien->email = $request->email;
         $penunggupasien->nama_pasien = $request->nama_pasien;
-        $penunggupasien->nik_pasien = $request->nik_pasien;
         $penunggupasien->alamat_pasien = $request->alamat_pasien;
         $penunggupasien->awal_perawatan = $request->awal_perawatan;
         $penunggupasien->akhir_perawatan = $request->akhir_perawatan;

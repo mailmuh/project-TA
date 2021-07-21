@@ -37,8 +37,9 @@
                                 <th scope="col">NO</th>                            
                                 <th scope="col">NAMA</th>
                                 <th scope="col">NIK</th>
-                                <th scope="col">TANGGAL</th>
-                                <th scope="col">SURAT PERMOHONAN</th>
+                                <th scope="col">NAMA PASIEN</th>
+                                <th scope="col">TANGGAL MASUK</th>
+                                <th scope="col">TANGGAL KELUAR</th>
                                 <th scope="col">SURAT KETERANGAN</th>
                                 <th scope="col">KETERANGAN</th>
                                 <th scope="col">AKSI</th>
@@ -50,8 +51,9 @@
                                 <td>{{ $d+1 }}</td>
                                 <td>{{ $penunggupasien->nama }}</td>
                                 <td>{{ $penunggupasien->nik }}</td>
-                                <td>{{ $penunggupasien->tanggal }}</td>
-                                <td>{{ $penunggupasien->surat_permohonan }}</td>
+                                <td>{{ $penunggupasien->nama_pasien }}</td>
+                                <td>{{ $penunggupasien->awal_perawatan }}</td>
+                                <td>{{ $penunggupasien->akhir_perawatan }}</td>
                                 <td>
                                     @if($penunggupasien->surat_keterangan!= NULL)
                                        <img src="{{ asset($penunggupasien->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto">
