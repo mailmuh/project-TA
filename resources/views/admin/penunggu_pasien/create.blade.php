@@ -76,6 +76,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <label class="form-label">KECAMATAN</label></br>
+                                <select name="kecamatan" class="form-control show-tick">
+                                    <option value="Margadana">Margadana</option>
+                                    <option value="Tegal Barat">Tegal Barat</option>
+                                    <option value="Tegal Selatan">Tegal Selatan</option>
+                                    <option value="Tegal Timur">Tegal Timur</option>
+                                </select>
+                            </div>
                         </div>
                         
                         <div class="row clearfix">

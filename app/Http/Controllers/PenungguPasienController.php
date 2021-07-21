@@ -53,6 +53,7 @@ class PenungguPasienController extends Controller
             $penunggupasien->email = $request->email;
             $penunggupasien->nama_pasien = $request->nama_pasien;
             $penunggupasien->alamat_pasien = $request->alamat_pasien;
+            $penunggupasien->kecamatan = $request->kecamatan;
             $penunggupasien->awal_perawatan = $request->awal_perawatan;
             $penunggupasien->akhir_perawatan = $request->akhir_perawatan;
             $penunggupasien->surat_permohonan = $request->surat_permohonan;
@@ -117,6 +118,7 @@ class PenungguPasienController extends Controller
                 'email' => 'required',
                 'nama_pasien' => 'required',
                 'alamat_pasien' => 'required',
+                'kecamatan' => 'required',
                 'awal_perawatan' => 'required',
                 'akhir_perawatan' => 'required',
                 'surat_permohonan' => 'required',
@@ -132,6 +134,7 @@ class PenungguPasienController extends Controller
                 'email' => 'required',
                 'nama_pasien' => 'required',
                 'alamat_pasien' => 'required',
+                'kecamatan' => 'required',
                 'awal_perawatan' => 'required',
                 'akhir_perawatan' => 'required',
                 'surat_permohonan' => 'required',
@@ -156,6 +159,7 @@ class PenungguPasienController extends Controller
         $penunggupasien->email = $request->email;
         $penunggupasien->nama_pasien = $request->nama_pasien;
         $penunggupasien->alamat_pasien = $request->alamat_pasien;
+        $penunggupasien->kecamatan = $request->kecamatan;
         $penunggupasien->awal_perawatan = $request->awal_perawatan;
         $penunggupasien->akhir_perawatan = $request->akhir_perawatan;
         $penunggupasien->surat_permohonan = $request->surat_permohonan;

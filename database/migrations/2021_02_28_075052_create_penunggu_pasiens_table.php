@@ -22,6 +22,8 @@ class CreatePenungguPasiensTable extends Migration
             $table->string('email');
             $table->string('nama_pasien');
             $table->string('alamat_pasien');
+            $table->enum('kecamatan',['Margadana', 'Tegal Barat', 'Tegal Selatan', 'Tegal Timur']);
+            $table->string('tanggal');
             $table->string('awal_perawatan');
             $table->string('akhir_perawatan');
             $table->string('surat_permohonan');

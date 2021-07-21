@@ -134,4 +134,21 @@ class VerifikasiController extends Controller
         }
     }
 
+    public function cetakLaporan()
+    {
+        $penunggupasien = PenungguPasien::all();
+        return view('admin.verifikasi.cetak-laporan', compact('penunggupasien'));
+    }
+
+    public function cetakForm()
+    {
+        return view('admin.verifikasi.cetak-laporan-form');
+    }
+
+    public function cetakLaporanFilter($tglawal, $tglakhir)
+    {
+        $penunggupasien = PenungguPasien::get()->whereBetween('tanggal', [$tglawal, $tglakhir]);
+        return view('admin.verifikasi.cetak-laporan', compact('penunggupasien'));
+    }
+
 }

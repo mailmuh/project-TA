@@ -77,6 +77,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">KECAMATAN</label>
+                                    <select name="kecamatan" class="form-control show-tick">
+                                        <option value="Margadana"{{$penunggupasien->kecamatan == 'Margadana' ? 'selected' : '' }}>Margadana</option>
+                                        <option value="Tegal Barat"{{$penunggupasien->kecamatan == 'Tegal Barat' ? 'selected' : '' }}>Tegal Barat</option>
+                                        <option value="Tegal Selatan"{{$penunggupasien->kecamatan == 'Tegal Selatan' ? 'selected' : '' }}>Tegal Selatan</option>
+                                        <option value="Tegal Timur"{{$penunggupasien->kecamatan == 'Tegal Timur' ? 'selected' : '' }}>Tegal Timur</option>
+                                    </select>
+                            </div>
                         </div>
                         
                         <div class="row clearfix">

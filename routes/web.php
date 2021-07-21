@@ -36,6 +36,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/verifikasi/{id}', 'PenungguPasienController@verifikasi')->name('penunggupasiens.verifikasi');
     Route::delete('/verifikasi/{id}', 'PenungguPasienController@destroyVerifikasi')->name('verifikasi.destroyVerifikasi');
 
+    // cetak data verifikasi
+    Route::get('/cetak-laporan', 'VerifikasiController@cetakLaporan')->name('cetak-laporan');
+    Route::get('/cetak-laporan-form', 'VerifikasiController@cetakForm')->name('cetak-laporan-form');
+    Route::get('/cetak-laporan-filter/{tglawal}/{tglakhir}', 'VerifikasiController@cetakLaporanFilter')->name('cetak-laporan-filter');
+
 });
 
 // Route::get('/', function () {

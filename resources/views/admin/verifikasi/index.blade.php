@@ -27,20 +27,20 @@
             </ul>
         </div>
         <div class="body">
-            <!-- <div class="block-header">
-                <a href="{{ route('verifikasis.create') }}" class="btn bg-purple waves-effect m-r-20">Add Data</a>
-            </div> -->
+            <div class="block-header">
+                <a href="/cetak-laporan-form" class="btn bg-purple waves-effect m-r-20">Cetak Data</a>
+            </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead>
                             <tr>
-                                    <th scope="col">NO</th>                            
-                                    <th scope="col">NAMA</th>
-                                    <th scope="col">NIK</th>
-                                    <th scope="col">EMAIL</th>
-                                    <th scope="col">ALAMAT</th>
-                                    <th scope="col">KETERANGAN</th>
-                                    <th scope="col">AKSI</th>
+                                <th scope="col">NO</th>                            
+                                <th scope="col">NAMA</th>
+                                <th scope="col">NIK</th>
+                                <th scope="col">EMAIL</th>
+                                <th scope="col">ALAMAT</th>
+                                <th scope="col">KETERANGAN</th>
+                                <th scope="col">AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
