@@ -41,6 +41,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/cetak-laporan-form', 'VerifikasiController@cetakForm')->name('cetak-laporan-form');
     Route::get('/cetak-laporan-filter/{tglawal}/{tglakhir}', 'VerifikasiController@cetakLaporanFilter')->name('cetak-laporan-filter');
 
+    Route::get('/cetak-laporan', 'VerifikasiController@cetakLaporan')->name('cetak-laporan');
+    Route::get('/cetak-laporan-formkecamatan', 'VerifikasiController@cetakFormKecamatan')->name('cetak-laporan-formkecamatan');
+    Route::post('/cetak-laporan-filter', 'VerifikasiController@cetakLaporanFilterKecamatan')->name('cetak-laporan-filterkecamatan');
+    // Route::get('/cetak-laporan/cetak_pdf ', 'VerifikasiController@print');
+
 });
 
 // Route::get('/', function () {

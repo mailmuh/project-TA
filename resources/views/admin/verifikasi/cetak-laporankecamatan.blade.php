@@ -18,7 +18,26 @@
 			font-size: 9pt;
 		}
 	</style>
+    
     <div class="form-group">
+    <center>
+    <table>
+			<tr>
+				<td><img src="{{asset('assets/images/dinsos.png')}}" width="110" height="90"></td>
+				<td>
+				<center>
+					<font size="4">PEMERINTAHAN KOTA TEGAL</font><br>
+					<font size="5"><b>DINAS SOSIAL KOTA TEGAL</b></font><br>
+					{{-- <font size="2">Bidang Keahlian : Bisnis dan Menejemen - Teknologi informasi dan Komunikasi</font><br> --}}
+					<font size="2"><i>Jl. Sipelem No.2, Pekauman, Kec. Tegal Barat, Kota Tegal, Jawa Tengah Kode Pos : 52112</i></font>
+				</center>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+		<table width="625">
+    </center>
         <p align="center"><b>Laporan Data Pemohon</b></p><br>
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -40,29 +59,33 @@
                     <th>Surat Kuasa</th> -->
                 </tr>
             </thead>
-
-            @foreach ($penunggupasien as $s)
+            @foreach($penunggupasien as $penunggupasien)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$s->nama}}</td>
-                    <td>{{$s->nik}}</td>
-                    <td>{{$s->alamat_pemohon}}</td>
-                    <td>{{$s->nohp}}</td>
-                    <td>{{$s->email}}</td>
-                    <td>{{$s->nama_pasien}}</td>
-                    <!-- <td>{{$s->alamat_pasien}}</td> -->
-                    <td>{{$s->kecamatan}}</td>
-                    <td>{{$s->tanggal}}</td>
-                    <td>{{$s->awal_perawatan}}</td>
-                    <td>{{$s->akhir_perawatan}}</td>
-                    <!-- <td>{{$s->surat_permohonan}}</td>
-                    <td>{{$s->sep}}</td>
-                    <td>{{$s->surat_kuasa}}</td> -->
-                    <!-- <td>{{$s->surat_keterangan}}</td> -->
+                    <td>{{$penunggupasien->nama}}</td>
+                    <td>{{$penunggupasien->nik}}</td>
+                    <td>{{$penunggupasien->alamat_pemohon}}</td>
+                    <td>{{$penunggupasien->nohp}}</td>
+                    <td>{{$penunggupasien->email}}</td>
+                    <td>{{$penunggupasien->nama_pasien}}</td>
+                    <td>{{$penunggupasien->kecamatan}}</td>
+                    <td>{{$penunggupasien->tanggal}}</td>
+                    <td>{{$penunggupasien->awal_perawatan}}</td>
+                    <td>{{$penunggupasien->akhir_perawatan}}</td>
+
                 </tr>
-            @endforeach
+                
+            @endforeach        
 
         </table>
+
+        <br><br><br>
+		<table width="625">
+			<tr>			
+				<td width="430"><br><br><br><br></td>
+				<td class="text" align="center">Yang Menyerahkan, <br><br><br><br>Basuki, S.E.,M.M</td>
+			</tr>
+	     </table>
     </div>
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

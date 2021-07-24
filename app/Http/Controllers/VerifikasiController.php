@@ -12,6 +12,8 @@ use App\Mail\SendMail;
 // Panggil support email dari Laravel
 use Illuminate\Support\Facades\Mail;
 
+use PDF;
+
 class VerifikasiController extends Controller
 {
     /**
@@ -149,6 +151,42 @@ class VerifikasiController extends Controller
     {
         $penunggupasien = PenungguPasien::get()->whereBetween('tanggal', [$tglawal, $tglakhir]);
         return view('admin.verifikasi.cetak-laporan', compact('penunggupasien'));
+    }
+
+    // public function print()
+    // {
+    //     $penunggupasien = PenungguPasien::all();
+ 
+    //     $pdf = PDF::loadview('admin.verifikasi.cetakpdf',['penunggupasien'=>$penunggupasien]);
+    //     return $pdf->stream();
+    // }
+
+    public function cetakLaporanKecamatan()
+    {
+        $penunggupasien = PenungguPasien::all();
+        return view('admin.verifikasi.cetak-laporankecamatan', compact('penunggupasien'));
+    }
+
+    public function cetakFormKecamatan()
+    {
+        return view('admin.verifikasi.cetak-laporan-formkecamatan');
+    }
+
+    public function cetakLaporanFilterKecamatan( Request $request)
+    {
+        // $penunggupasien = PenungguPasien::where('kecamatan', $kecamatan)->first();
+        // $penunggupasien = PenungguPasien::get()->whereBetween('tanggal', [$request->tglawal, $request->tglakhir]);
+        // $penunggupasien = PenungguPasien::where('kecamatan', $request->kecamatan)->get();
+        // $penunggupasien = PenungguPasien::whereBetween('tanggal', [$request->tglawal, $request->tglakhir])->where('kecamatan', $request->kecamatan)->get();
+        // echo json_encode($penunggupasien);
+        if ($request->kecamatan) {
+            $penunggupasien = PenungguPasien::where('kecamatan', $request->kecamatan)->get();
+        } else if ($request->tglawal && $request->tglakhir) {
+            $penunggupasien = PenungguPasien::get()->whereBetween('tanggal', [$request->tglawal, $request->tglakhir]);
+        } else {
+            $penunggupasien = PenungguPasien::whereBetween('tanggal', [$request->tglawal, $request->tglakhir])->where('kecamatan', $request->kecamatan)->get();
+        }
+        return view('admin.verifikasi.cetak-laporankecamatan', compact('penunggupasien'));
     }
 
 }

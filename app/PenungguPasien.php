@@ -9,7 +9,7 @@ class PenungguPasien extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-    	'nama', 'nik', 'alamat_pemohon', 'nohp', 'email', 'nama_pasien', 'alamat_pasien', 'awal_perawatan', 'akhir_perawatan', 'surat_permohonan', 'sep', 'surat_kuasa', 'surat_keterangan', 'keterangan'
+    	'nama', 'nik', 'alamat_pemohon', 'nohp', 'email', 'nama_pasien', 'alamat_pasien', 'awal_perawatan', 'kecamatan', 'tanggal', 'akhir_perawatan', 'surat_permohonan', 'sep', 'surat_kuasa', 'surat_keterangan', 'keterangan'
 
     ];
 

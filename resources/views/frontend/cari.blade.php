@@ -88,7 +88,7 @@
                     SEARCH DATA
                 </h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
-                    Isikan NIK untuk mencari proses data anda.</h3>
+                    Masukkan NIK untuk mencari proses data anda.</h3>
                 <h2 id="notifverif" class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5"></h3>
             </div>
         </div>
@@ -126,7 +126,7 @@
                 <p class="mbr-text"><a href="#">
                     </a><strong><a href="#">Alamat</a></strong><a href="#">
                     </a><br><a href="#">
-                    </a><br><a href="#">Jl. Sipelem No.2, Pekauman, Kec. Tegal Bar., Kota Tegal, Jawa Tengah 52112</a><br><a href="#">
+                    </a><br><a href="#">Jl. Sipelem No.2, Pekauman, Kec. Tegal Barat., Kota Tegal, Jawa Tengah 52112</a><br><a href="#">
                     </a></p>
             </div>
             <div class="col-12 col-md-3 mbr-fonts-style display-7">
@@ -149,11 +149,12 @@
             <div class="media-container-row mbr-white">
                 <div class="col-sm-6 copyright">
                     <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2018 Serenidad Homes - All Rights Reserved
+                        <!-- © Copyright 2018 Serenidad Homes - All Rights Reserved -->
+                        © Dinas Sosial Kota Tegal 2021
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <div class="social-list align-right">
+                    <!-- <div class="social-list align-right">
                         <div class="soc-item">
                             <a href="https://twitter.com/serenidad" target="_blank">
                                 <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
@@ -184,7 +185,7 @@
                                 <span class="mbr-iconfont mbr-iconfont-social socicon-behance socicon"></span>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

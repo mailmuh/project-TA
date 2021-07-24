@@ -6,6 +6,7 @@
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">Login</a>
+            <!-- <center><h3 style="color:#FFFFFF">Sistem Pemberian Dana Bantuan Sosial Penunggu Pasien</h3></center> -->
         </div>
         <div class="card">
             <div class="body">
@@ -52,20 +53,20 @@
                             <label for="rememberme">Remember Me</label> -->
                         </div>
                         <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+                            <button class="btn btn-block bg-pink waves-effect" type="submit">LOGIN</button>
                         </div>
                     </div>
-                    <!-- <div class="row m-t-15 m-b--20">
+                    <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
                             <a href="/register">Register Now!</a>
                         </div>
-                        <div class="col-xs-6 align-right">
+                        <!-- <div class="col-xs-6 align-right">
                             <a href="{{ route('password.request') }}">Forgot Password?</a>
                             {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
                             </a> --}}
-                        </div>
-                    </div> -->
+                        </div> -->
+                    </div>
                 </form>
             </div>
         </div>

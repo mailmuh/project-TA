@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="{{ asset('assetsfrontend/images/logo_pemkot.png') }}" type="image/x-icon">
     <title>SPB | Dinas Sosial</title>
     <!-- Favicon-->
-    <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon">
+    <!-- <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon"> -->
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">

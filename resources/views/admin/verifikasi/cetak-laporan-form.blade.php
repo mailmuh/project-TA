@@ -31,6 +31,8 @@
                 </div>
                 <a href="" onclick="this.href='/cetak-laporan-filter/'+ document.getElementById('tglawal').value
                 + '/' + document.getElementById('tglakhir').value" target="blank" class="btn btn-primary">Filter Cetak Laporan <i class="fas fa-print"></i></a>
+
+                <!-- <a href="/cetak-laporan/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a> -->
             </div>
         </div>
     </div>

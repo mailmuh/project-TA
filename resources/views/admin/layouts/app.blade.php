@@ -86,6 +86,13 @@
         <!-- #END# Right Sidebar -->
     </section>
 
+    <!-- @include('sweet::alert') -->
+
+    <!-- page script section -->
+		@yield('swal-scripts')
+		@yield('page-scripts')
+    <!-- end page script section -->
+
     <section class="content">
         @yield('content')
     </section>
@@ -186,6 +193,7 @@
         });
     });
 </script>
+@include('sweetalert::alert')
 </body>
 
 </html>

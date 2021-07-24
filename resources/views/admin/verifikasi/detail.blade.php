@@ -2,158 +2,89 @@
 
 @section('content')
 
-    <div class="card">
-        <div class="header">
-            <center>
-                <h2>Detail Data Verifikasi Dengan NIK : {{ $penunggupasien->nik }}</h2>
-            </center>
-        </div>
-        <div class="body">
-            <div class="row clearfix">
-                <div class="col-sm-12">
-                    <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>NAMA PEMOHON</label>
-                                        <input type="text" name="nama" placeholder="Masukan Nama Pemohon" class="form-control" value="{{ $penunggupasien->nama }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>NIK PEMOHON</label>
-                                        <input type="text" name="nik" placeholder="Masukan NIK Pemohon" class="form-control" value="{{ $penunggupasien->nik }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>ALAMAT PEMOHON</label>
-                                        <input type="text" name="alamat_pemohon" placeholder="Masukan Alamat Pemohon" class="form-control" value="{{ $penunggupasien->alamat_pemohon }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>NOMOR HP</label>
-                                        <input type="text" name="nohp" placeholder="Masukan Nomor Handphone Pemohon" class="form-control" value="{{ $penunggupasien->nohp }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>EMAIL</label>
-                                        <input type="text" name="email" placeholder="Masukan Email Pemohon" class="form-control" value="{{ $penunggupasien->email }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>NAMA PASIEN</label>
-                                        <input type="text" name="nama_pasien" placeholder="Masukan Nama Pasien" class="form-control" value="{{ $penunggupasien->nama_pasien }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>ALAMAT PASIEN</label>
-                                        <input type="text" name="alamat_pasien" placeholder="Masukan Alamat Pasien" class="form-control" value="{{ $penunggupasien->alamat_pasien }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>KETERANGAN</label>
-                                        <input type="text" name="keterangan" placeholder="Masukan Alamat Pasien" class="form-control" value="{{ $penunggupasien->keterangan }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row clearfix">
-                        <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>Tanggal Awal Perawatan</label>
-                                        <input type="date" name="awal_perawatan" placeholder="Masukan KTP Pemohon" class="form-control" value="{{ $penunggupasien->awal_perawatan }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>Tanggal Akhir Perawatan</label>
-                                        <input type="date" name="akhir_perawatan" placeholder="Masukan KTP Pasien" class="form-control" value="{{ $penunggupasien->akhir_perawatan }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="card">
+    <div class="header">
+        <center>
+            <h2>Detail Data Verifikasi</h2>
+        </center>
+    </div>
+    <div class="body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                @foreach ($penunggupasien as $p)
+                    <tr>
+                        <th width="25%">Nama</th>
+                        <td>{{$p->nama}}</td>
+                    </tr>
+                    <tr>
+                        <th>Nomor Induk Kependudukan</th>
+                        <td>{{$p->nik}}</td>
+                    </tr>
+                    <tr>
+                        <th>Alamat Pemohon</th>
+                        <td>{{$p->alamat_pemohon}}</td>
+                    </tr>
+                    <tr>
+                        <th>Nomor HP</th>
+                        <td>{{$p->nohp}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{$p->email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Nama Pasien</th>
+                        <td>{{$p->nama_pasien}}</td>
+                    </tr>
+                    <tr>
+                        <th>Alamat Pasien</th>
+                        <td>{{$p->alamat_pasien}}</td>
+                    </tr>
+                    <tr>
+                        <th>Kecamatan</th>
+                        <td>{{$p->kecamatan}}</td>
+                    </tr>
+                    <tr>
+                        <th>Tanggal</th>
+                        <td>{{$p->tanggal}}</td>
+                    </tr>
+                    <tr>
+                        <th>Tanggal Awal Perawatan</th>
+                        <td>{{$p->awal_perawatan}}</td>
+                    </tr>
+                    <tr>
+                        <th>Tanggal Akhir Perawatan</th>
+                        <td>{{$p->akhir_perawatan}}</td>
+                    </tr>
+                    <tr>
+                        <th>Surat Permohonan</th>
+                        <td>{{$p->surat_permohonan}}</td>
+                    </tr>
+                    <tr>
+                        <th>Nomor Surat Elegibilitas Peserta</th>
+                        <td>{{$p->sep}}</td>
+                    </tr>
+                    <tr>
+                        <th>Surat Kuasa</th>
+                        <td>{{$p->surat_kuasa}}</td>
+                    </tr>
+                    <tr>
+                        <th>Surat Keterangan</th>
+                        <td>
 
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>SURAT PERMOHONAN</label>
-                                        <input type="text" name="surat_permohonan" placeholder="Masukan Nama Pasien" class="form-control" value="{{ $penunggupasien->surat_permohonan }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>SEP</label>
-                                        <input type="text" name="sep" placeholder="Masukan Surat Elegibilitas Peserta" class="form-control" value="{{ $penunggupasien->sep }}" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label>SURAT KUASA</label>
-                                        <input type="text" name="surat_kuasa" placeholder="Masukan Surat Kuasa" value="{{ $penunggupasien->surat_kuasa }}" class="form-control" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                    <label>UNGGAH SURAT KETERANGAN</label>
-                                        <div class="fallback">
-                                            <img src="{{ asset($penunggupasien->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto" alt="tidak ada gambar">
-                                            <!-- <input name="surat_keterangan" type="file" multiple value="{{ $penunggupasien->surat_keterangan }}" /> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="{{ route('penunggupasiens.index') }}" class="btn btn-sm btn-success waves-effect m-r-20">Back</a>
-                        <!-- <button type="submit" class="btn btn-sm btn-primary waves-effect m-r-20">Save & Update</button> -->
-                        <!-- <button type="submit" class="btn btn-success">UPDATE</button>
-                            <button type="reset" class="btn btn-warning">RESET</button> -->
-                    </form>
-                </div>
-            </div>
+                            @if($p->surat_keterangan!= NULL)
+                                <img src="{{URL::to('/')}}/{{$p->surat_keterangan}}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto">
+                            @else
+                                <h5 style="color:red">Tidak ada Gambar</h5>
+                            @endif
+
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+            <a href="/verifikasi" class="btn btn-sm btn-success waves-effect m-r-20">Back</a>
         </div>
     </div>
+</div>
 
 @endsection
