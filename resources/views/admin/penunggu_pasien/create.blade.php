@@ -134,15 +134,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>SURAT PERMOHONAN</label>
-                                        <input type="text" name="surat_permohonan" placeholder="Masukan Nama Pasien" class="form-control" value="{{ old('surat_permohonan') }}">
+                                        <label>UNGGAH SURAT PERMOHONAN</label>
+                                        <small class="text-danger">(format harus jpeg,jpg,png)</small>
+                                        <input name="surat_permohonan" type="file" multiple  value="{{ old('surat_permohonan') }}" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>SEP</label>
+                                        <label>NOMOR SEP</label>
                                         <input type="text" name="sep" placeholder="Masukan Nomor Surat Elegibilitas Peserta" class="form-control" value="{{ old('sep') }}" >
                                     </div>
                                 </div>
@@ -152,8 +153,9 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>SURAT KUASA</label>
-                                        <input type="text" name="surat_kuasa" placeholder="Masukan Surat Kuasa" class="form-control" value="{{ old('surat_kuasa') }} ">
+                                        <label>UNGGAH SURAT KUASA</label>
+                                        <small class="text-danger">(format harus jpeg,jpg,png)</small>
+                                        <input name="surat_kuasa" type="file" multiple  value="{{ old('surat_kuasa') }}" />
                                     </div>
                                 </div>
                             </div>
@@ -179,14 +181,14 @@
         
         @include('sweet::alert')
         
-        <script>
+        <!-- <script>
         function hanyaAngka(event) {
             var nik = (event.which) ? event.which : event.keyCode
             if (nik != 46 && nik > 31 && (nik < 48 || nik > 57))
                 return false;
             return true;
         }
-    </script>
+    </script> -->
 
 @endsection
 

@@ -121,8 +121,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>SURAT PERMOHONAN</label>
-                                        <input type="text" name="surat_permohonan" placeholder="Masukan Nama Pasien" class="form-control" value="{{ $penunggupasien->surat_permohonan }}" required>
+                                        <label>UNGGAH SURAT PERMOHONAN</label>
+                                        <div class="fallback">
+                                            <img src="{{ asset($penunggupasien->surat_permohonan) }}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto" alt="tidak ada gambar">
+                                            <input name="surat_permohonan" type="file" multiple value="{{ $penunggupasien->surat_permohonan }}" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -139,8 +142,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <label>SURAT KUASA</label>
-                                        <input type="text" name="surat_kuasa" placeholder="Masukan Surat Kuasa" value="{{ $penunggupasien->surat_kuasa }}" class="form-control">
+                                        <label>UNGGAH SURAT KUASA</label>
+                                        <div class="fallback">
+                                            <img src="{{ asset($penunggupasien->surat_kuasa) }}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto" alt="tidak ada gambar">
+                                            <input name="surat_kuasa" type="file" multiple value="{{ $penunggupasien->surat_kuasa }}" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

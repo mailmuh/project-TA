@@ -83,7 +83,7 @@
 		<table width="625">
 			<tr>			
 				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Yang Menyerahkan, <br><br><br><br>Basuki, S.E.,M.M</td>
+				<td class="text" align="center">Dinas Sosial Kota Tegal, <br><br><br><br>Dyah Kemala Sintha, SH., MH</td>
 			</tr>
 	     </table>
     </div>

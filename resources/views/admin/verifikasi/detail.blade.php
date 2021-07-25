@@ -10,7 +10,7 @@
     </div>
     <div class="body">
         <div class="table-responsive">
-            <table class="table table-bordered">
+        <table class="table table-bordered">
                 @foreach ($penunggupasien as $p)
                     <tr>
                         <th width="25%">Nama</th>
@@ -57,16 +57,30 @@
                         <td>{{$p->akhir_perawatan}}</td>
                     </tr>
                     <tr>
-                        <th>Surat Permohonan</th>
-                        <td>{{$p->surat_permohonan}}</td>
-                    </tr>
-                    <tr>
                         <th>Nomor Surat Elegibilitas Peserta</th>
                         <td>{{$p->sep}}</td>
                     </tr>
                     <tr>
+                        <th>Surat Permohonan</th>
+                        <td>
+                            @if($p->surat_permohonan!= NULL)
+                                <img src="{{URL::to('/')}}/{{$p->surat_permohonan}}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto">
+                            @else
+                                <h5 style="color:red">Tidak ada Gambar</h5>
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Surat Kuasa</th>
-                        <td>{{$p->surat_kuasa}}</td>
+                        <td>
+
+                            @if($p->surat_kuasa!= NULL)
+                                <img src="{{URL::to('/')}}/{{$p->surat_kuasa}}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto">
+                            @else
+                                <h5 style="color:red">Tidak ada Gambar</h5>
+                            @endif
+
+                        </td>
                     </tr>
                     <tr>
                         <th>Surat Keterangan</th>

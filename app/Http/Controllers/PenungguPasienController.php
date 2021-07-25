@@ -71,13 +71,15 @@ class PenungguPasienController extends Controller
             'tanggal' => 'required',
             'awal_perawatan' => 'required',
             'akhir_perawatan' => 'required',
-            'surat_permohonan' => 'required',
+            'surat_permohonan' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'sep' => 'required',
-            'surat_keterangan' => 'required|image|mimes:jpeg,jpg,png,pdf|max:2048',
+            'surat_keterangan' => 'required|image|mimes:jpeg,jpg,png|max:2048',
 
         ],$messages);
 
-            $fileNameSK =  'Gambar-'.request()->surat_keterangan->getClientOriginalName();
+            $fileNameSK =  'SuratKeterangan-'.request()->surat_keterangan->getClientOriginalName();
+            $fileNameSP =  'SuratPermohonan-'.request()->surat_permohonan->getClientOriginalName();
+            $fileNameSA =  'SuratKuasa-'.request()->surat_permohonan->getClientOriginalName();
         
             $penunggupasien = new PenungguPasien();
             $penunggupasien->nama = $request->nama;
@@ -91,12 +93,20 @@ class PenungguPasienController extends Controller
             $penunggupasien->tanggal = $request->tanggal;
             $penunggupasien->awal_perawatan = $request->awal_perawatan;
             $penunggupasien->akhir_perawatan = $request->akhir_perawatan;
-            $penunggupasien->surat_permohonan = $request->surat_permohonan;
+            // $penunggupasien->surat_permohonan = $request->surat_permohonan;
             $penunggupasien->sep = $request->sep;
-            $penunggupasien->surat_kuasa = $request->surat_kuasa;
+            // $penunggupasien->surat_kuasa = $request->surat_kuasa;
             
-            if ($request->surat_keterangan->move(storage_path('app/public/DataPenungguPasien/gambar'), $fileNameSK)) {
-                $penunggupasien->surat_keterangan = "storage/DataPenungguPasien/gambar/".$fileNameSK;
+            if ($request->surat_permohonan->move(storage_path('app/public/DataPenungguPasien/suratpermohonan'), $fileNameSP)) {
+                $penunggupasien->surat_permohonan = "storage/DataPenungguPasien/suratpermohonan/".$fileNameSP;
+            }
+
+            if ($request->surat_keterangan->move(storage_path('app/public/DataPenungguPasien/suratketerangan'), $fileNameSK)) {
+                $penunggupasien->surat_keterangan = "storage/DataPenungguPasien/suratketerangan/".$fileNameSK;
+            }
+
+            if ($request->surat_kuasa->move(storage_path('app/public/DataPenungguPasien/suratkuasa'), $fileNameSA)) {
+                $penunggupasien->surat_kuasa = "storage/DataPenungguPasien/suratkuasa/".$fileNameSA;
             }
 
             $penunggupasien->keterangan = 'belum terverifikasi';
@@ -146,8 +156,10 @@ class PenungguPasienController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $sperPict = PenungguPasien::where("id","=",$id)->get()->first()->surat_permohonan;
         $sketPict = PenungguPasien::where("id","=",$id)->get()->first()->surat_keterangan;
-        if (!$request->surat_keterangan) {
+        $skuPict = PenungguPasien::where("id","=",$id)->get()->first()->surat_kuasa;
+        if (!$request->surat_keterangan && !$request->surat_kuasa) {
             $request->validate([
                 'nama' => 'required',
                 'nik' => 'required',
@@ -160,9 +172,102 @@ class PenungguPasienController extends Controller
                 'tanggal' => 'required',
                 'awal_perawatan' => 'required',
                 'akhir_perawatan' => 'required',
-                'surat_permohonan' => 'required',
+                'surat_permohonan' => 'required|image|mimes:jpeg,jpg,png|max:2048',
                 'sep' => 'required',
             ]);
+            $fileNameSP = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_permohonan->getClientOriginalExtension();
+            // $fileNameSA = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_kuasa->getClientOriginalExtension();
+        }else if (!$request->surat_permohonan && !$request->surat_kuasa) {
+            $request->validate([
+                'nama' => 'required',
+                'nik' => 'required',
+                'alamat_pemohon' => 'required',
+                'nohp' => 'required',
+                'email' => 'required',
+                'nama_pasien' => 'required',
+                'alamat_pasien' => 'required',
+                'kecamatan' => 'required',
+                'tanggal' => 'required',
+                'awal_perawatan' => 'required',
+                'akhir_perawatan' => 'required',
+                'surat_keterangan' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'sep' => 'required',
+            ]);
+            $fileNameSK = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_keterangan->getClientOriginalExtension();
+            // $fileNameSA = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_kuasa->getClientOriginalExtension();
+        }else if (!$request->surat_permohonan && !$request->surat_keterangan) {
+            $request->validate([
+                'nama' => 'required',
+                'nik' => 'required',
+                'alamat_pemohon' => 'required',
+                'nohp' => 'required',
+                'email' => 'required',
+                'nama_pasien' => 'required',
+                'alamat_pasien' => 'required',
+                'kecamatan' => 'required',
+                'tanggal' => 'required',
+                'awal_perawatan' => 'required',
+                'akhir_perawatan' => 'required',
+                'sep' => 'required',
+            ]);
+            // $fileNameSK = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_keterangan->getClientOriginalExtension();
+            $fileNameSA = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_kuasa->getClientOriginalExtension();
+        }else if (!$request->surat_kuasa) {
+            $request->validate([
+                'nama' => 'required',
+                'nik' => 'required',
+                'alamat_pemohon' => 'required',
+                'nohp' => 'required',
+                'email' => 'required',
+                'nama_pasien' => 'required',
+                'alamat_pasien' => 'required',
+                'kecamatan' => 'required',
+                'tanggal' => 'required',
+                'awal_perawatan' => 'required',
+                'akhir_perawatan' => 'required',
+                'surat_keterangan' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'surat_permohonan' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'sep' => 'required',
+            ]);
+            $fileNameSK = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_keterangan->getClientOriginalExtension();
+            $fileNameSP = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_permohonan->getClientOriginalExtension();
+        }else if (!$request->surat_keterangan) {
+            $request->validate([
+                'nama' => 'required',
+                'nik' => 'required',
+                'alamat_pemohon' => 'required',
+                'nohp' => 'required',
+                'email' => 'required',
+                'nama_pasien' => 'required',
+                'alamat_pasien' => 'required',
+                'kecamatan' => 'required',
+                'tanggal' => 'required',
+                'awal_perawatan' => 'required',
+                'akhir_perawatan' => 'required',
+                'surat_permohonan' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'sep' => 'required',
+            ]);
+            $fileNameSA = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_kuasa->getClientOriginalExtension();
+            $fileNameSP = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_permohonan->getClientOriginalExtension();
+        }else if (!$request->surat_permohonan) {
+            $request->validate([
+                'nama' => 'required',
+                'nik' => 'required',
+                'alamat_pemohon' => 'required',
+                'nohp' => 'required',
+                'email' => 'required',
+                'nama_pasien' => 'required',
+                'alamat_pasien' => 'required',
+                'kecamatan' => 'required',
+                'tanggal' => 'required',
+                'awal_perawatan' => 'required',
+                'akhir_perawatan' => 'required',
+                'surat_keterangan' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'sep' => 'required',
+            ]);
+            $fileNameSK = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_keterangan->getClientOriginalExtension();
+            $fileNameSA = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_kuasa->getClientOriginalExtension();
+        
         }else {
             $request->validate([
                 'nama' => 'required',
@@ -176,11 +281,13 @@ class PenungguPasienController extends Controller
                 'tanggal' => 'required',
                 'awal_perawatan' => 'required',
                 'akhir_perawatan' => 'required',
-                'surat_permohonan' => 'required',
                 'sep' => 'required',
-                'surat_keterangan' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'surat_keterangan' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'surat_permohonan' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             ]);
-            $fileName = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_keterangan->getClientOriginalExtension();
+            $fileNameSK = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_keterangan->getClientOriginalExtension();
+            $fileNameSP = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_permohonan->getClientOriginalExtension();
+            $fileNameSA = str_replace("=","",base64_encode($request->name.time())) . '.' . request()->surat_kuasa->getClientOriginalExtension();
         }
 
         if ($request->has('active')) {
@@ -201,9 +308,8 @@ class PenungguPasienController extends Controller
         $penunggupasien->tanggal = $request->tanggal;
         $penunggupasien->awal_perawatan = $request->awal_perawatan;
         $penunggupasien->akhir_perawatan = $request->akhir_perawatan;
-        $penunggupasien->surat_permohonan = $request->surat_permohonan;
         $penunggupasien->sep = $request->sep;
-        $penunggupasien->surat_kuasa = $request->surat_kuasa;
+        
         if ($request->hasFile('surat_keterangan')) {
             if(is_file($penunggupasien->surat_keterangan)) {
                 try{
@@ -212,10 +318,38 @@ class PenungguPasienController extends Controller
 
                 }
             }
-            $request->surat_keterangan->move(storage_path('app/public/DataPenungguPasien/gambar'), $fileName);
-            $penunggupasien->surat_keterangan = "storage/DataPenungguPasien/gambar/".$fileName;
+            $request->surat_keterangan->move(storage_path('app/public/DataPenungguPasien/suratketerangan'), $fileNameSK);
+            $penunggupasien->surat_keterangan = "storage/DataPenungguPasien/suratketerangan/".$fileNameSK;
         }else {
             $penunggupasien->surat_keterangan = $sketPict;
+        }
+
+        if ($request->hasFile('surat_permohonan')) {
+            if(is_file($penunggupasien->surat_permohonan)) {
+                try{
+                    unlink($sperPict);
+                }catch(\Exception $e){
+
+                }
+            }
+            $request->surat_permohonan->move(storage_path('app/public/DataPenungguPasien/suratpermohonan'), $fileNameSP);
+            $penunggupasien->surat_permohonan = "storage/DataPenungguPasien/suratpermohonan/".$fileNameSP;
+        }else {
+            $penunggupasien->surat_permohonan = $sperPict;
+        }
+
+        if ($request->hasFile('surat_kuasa')) {
+            if(is_file($penunggupasien->surat_kuasa)) {
+                try{
+                    unlink($skuPict);
+                }catch(\Exception $e){
+
+                }
+            }
+            $request->surat_kuasa->move(storage_path('app/public/DataPenungguPasien/suratkuasa'), $fileNameSA);
+            $penunggupasien->surat_kuasa = "storage/DataPenungguPasien/suratkuasa/".$fileNameSA;
+        }else {
+            $penunggupasien->surat_kuasa = $skuPict;
         }
 
         $penunggupasien->save();
@@ -236,6 +370,12 @@ class PenungguPasienController extends Controller
         $penunggupasien = PenungguPasien::find($id);
         if (is_file($penunggupasien->surat_keterangan)) {
             unlink($penunggupasien->surat_keterangan);
+        }
+        if (is_file($penunggupasien->surat_permohonan)) {
+            unlink($penunggupasien->surat_permohonan);
+        }
+        if (is_file($penunggupasien->surat_kuasa)) {
+            unlink($penunggupasien->surat_kuasa);
         }
 
         $penunggupasien->delete();

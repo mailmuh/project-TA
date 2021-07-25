@@ -31,7 +31,6 @@
 				<center>
 					<font size="4">PEMERINTAHAN KOTA TEGAL</font><br>
 					<font size="5"><b>DINAS SOSIAL KOTA TEGAL</b></font><br>
-					{{-- <font size="2">Bidang Keahlian : Bisnis dan Menejemen - Teknologi informasi dan Komunikasi</font><br> --}}
 					<font size="2"><i>Jl. Sipelem No.2, Pekauman, Kec. Tegal Barat, Kota Tegal, Jawa Tengah Kode Pos : 52112</i></font>
 				</center>
 				</td>
@@ -76,7 +75,7 @@
 				<td class="text" align="center">Yang Menerima, <br><br><br><br>{{ $s->nama }}</td>
 			
 				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Yang Menyerahkan, <br><br><br><br>Basuki, S.E.,M.M</td>
+				<td class="text" align="center">Yang Menyerahkan, <br><img src="{{asset('assets/images//ttd.png')}}" width="60" height="60"><br>SITI CAHYANI, S.Sos, M.Si</td>
 			</tr>
 	     </table>
 		<!-- <table width="625">

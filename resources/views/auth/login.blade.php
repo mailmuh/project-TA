@@ -2,74 +2,65 @@
 
 @section('content')
     
-<body class="login-page">
-    <div class="login-box">
-        <div class="logo">
-            <a href="javascript:void(0);">Login</a>
-            <!-- <center><h3 style="color:#FFFFFF">Sistem Pemberian Dana Bantuan Sosial Penunggu Pasien</h3></center> -->
-        </div>
-        <div class="card">
-            <div class="body">
-                <form id="sign_in" method="POST" action="{{ route('login') }}">
+
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="{{asset('assetslogin/images/logo_pemkot.png') }}" alt="IMG">
+				</div>
+
+                <form id="sign_in" method="POST" action="{{ route('login') }}" class="login100-form validate-form">
                     @csrf
-                    <!-- <div class="msg">Sign in to start your session</div> -->
-                    <center><img src="{{ asset('assetsfrontend/images/logo_pemkot.png') }}" alt="center" width="75"></center><br><br>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">person</i>
-                        </span>
-                        <div class="form-line">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email Address" autofocus>
+					<span class="login100-form-title">
+						Sistem Pemberian Bantuan Sosial<br>Dinas Sosial Kota Tegal
+					</span>
 
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-
-                            {{-- <input type="email" class="form-control" name="email" placeholder="Email Address" required autofocus> --}}
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
-                        </span>
-                        <div class="form-line">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
-                            
-                            @error('password')
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input id="email" name="email" class="input100 form-control @error('email') is-invalid @enderror" type="email" placeholder="Email" value="{{ old('email') }}">
+                        
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+                        @error('email')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong>Email yang anda masukkan tidak terdaftar</strong>
                             </span>
-                            @enderror
+                        @enderror
+					</div>
 
-                            {{-- <input type="password" class="form-control" name="password" placeholder="Password" required> --}}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-8 p-t-5">
-                            <!-- {{-- <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink"> --}}
-                            <input class="filled-in chk-col-pink" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label for="rememberme">Remember Me</label> -->
-                        </div>
-                        <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" type="submit">LOGIN</button>
-                        </div>
-                    </div>
-                    <div class="row m-t-15 m-b--20">
-                        <div class="col-xs-6">
-                            <a href="/register">Register Now!</a>
-                        </div>
-                        <!-- <div class="col-xs-6 align-right">
-                            <a href="{{ route('password.request') }}">Forgot Password?</a>
-                            {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a> --}}
-                        </div> -->
-                    </div>
-                </form>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input id="password" name="password" class="input100 @error('password') is-invalid @enderror" type="password" name="password" placeholder="Password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>Password yang anda masukkan salah</strong>
+                        </span>
+                        @enderror
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+
+				</form>
+                
+			</div>
+            <div class="col-sm-6 copyright">
+                <p class="mbr-text mbr-fonts-style display-7">
+                    <!-- © Copyright 2018 Serenidad Homes - All Rights Reserved -->
+                    © Dinas Sosial Kota Tegal 2021
+                </p>
             </div>
-        </div>
-    </div>
+		</div>
+	</div>
 
 @endsection

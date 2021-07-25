@@ -102,7 +102,7 @@
                         <div class="row clearfix">
                             <div class="col-md-6">
                                 <label class="form-label">PILIH KECAMATAN</label></br>
-                                <select name="kecamatan" id="kecamatan" class="custom-select my-1 mr-sm-2 bg-light">
+                                <select name="kecamatan" id="kecamatan" class="custom-select my-1 mr-sm-2 bg-light" required>
                                 <option selected disabled>-- Pilih Kecamatan --</option>
                                     <option value="Margadana">Margadana</option>
                                     <option value="Tegal Barat">Tegal Barat</option>
@@ -117,7 +117,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label for="label">Tanggal Awal :</label>
-                                        <input type="date" name="tglawal" id="tglawal" class="form-control bg-light ">
+                                        <input type="date" name="tglawal" id="tglawal" class="form-control bg-light " required>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label for="label">Tanggal Akhir :</label>
-                                        <input type="date" name="tglakhir" id="tglakhir" class="form-control bg-light">
+                                        <input type="date" name="tglakhir" id="tglakhir" class="form-control bg-light" required>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                         <!-- end filter tanggal -->
 
                         <hr>
-                        <button type="submit" class="btn btn-success btn-sm" target="_blank"><i class="fas fa-save"></i>CETAK</button>
+                        <button type="submit" class="button btn btn-success btn-sm" target="_blank"><i class="fas fa-save"></i>CETAK</button>
                         <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close"><i class="fas fa"></i>
                             BATAL</button>
                     </form>

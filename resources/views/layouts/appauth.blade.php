@@ -2,49 +2,48 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="shortcut icon" href="{{ asset('assetsfrontend/images/logo_pemkot.png') }}" type="image/x-icon">
     <title>SPB | Dinas Sosial</title>
-    <!-- Favicon-->
-    <!-- <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon"> -->
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-
-    <!-- Bootstrap Core Css -->
-    <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-
-    <!-- Waves Effect Css -->
-    <link href="{{ asset('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
-
-    <!-- Animation Css -->
-    <link href="{{ asset('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
-
-    <!-- Custom Css -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{{ asset('assetslogin/images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assetslogin/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assetslogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assetslogin/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{ asset('assetslogin/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assetslogin/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assetslogin/css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assetslogin/css/main.css') }}">
+<!--===============================================================================================-->
 </head>
 
 
     @yield('content')
 
 
-    <!-- Jquery Core Js -->
-    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="{{ asset('assets/plugins/node-waves/waves.js') }}"></script>
-
-    <!-- Validation Plugin Js -->
-    <script src="{{ asset('assets/plugins/jquery-validation/jquery.validate.js') }}"></script>
-
-    <!-- Custom Js -->
-    <script src="{{ asset('assets/js/admin.js')}}"></script>
-    <script src="{{ asset('assets/js/pages/examples/sign-in.js') }}"></script>
+<!--===============================================================================================-->	
+    <script src="{{ asset('assetslogin/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assetslogin/vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ asset('assetslogin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assetslogin/vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assetslogin/vendor/tilt/tilt.jquery.min.js') }}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js') }}"></script>
 </body>
 
 </html>

@@ -34,7 +34,7 @@
                                     <th scope="col">NO</th>                            
                                     <th scope="col">NAMA</th>
                                     <th scope="col">EMAIL</th>
-                                    <th scope="col">ROLE</th>
+                                    <th scope="col">LEVEL</th>
                                     <th scope="col">PASSWORD</th>
                                     <th scope="col">AKSI</th>
                             </tr>
