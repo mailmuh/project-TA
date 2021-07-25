@@ -46,15 +46,15 @@
                     </tr>
                     <tr>
                         <th>Tanggal</th>
-                        <td>{{$p->tanggal}}</td>
+                        <td>{{ \Carbon\Carbon::parse($p->tanggal)->format('d-m-Y')}}</td>
                     </tr>
                     <tr>
                         <th>Tanggal Awal Perawatan</th>
-                        <td>{{$p->awal_perawatan}}</td>
+                        <td>{{ \Carbon\Carbon::parse($p->awal_perawatan)->format('d-m-Y')}}</td>
                     </tr>
                     <tr>
                         <th>Tanggal Akhir Perawatan</th>
-                        <td>{{$p->akhir_perawatan}}</td>
+                        <td>{{ \Carbon\Carbon::parse($p->akhir_perawatan)->format('d-m-Y')}}</td>
                     </tr>
                     <tr>
                         <th>Nomor Surat Elegibilitas Peserta</th>

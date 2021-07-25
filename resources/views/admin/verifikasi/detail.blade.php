@@ -46,15 +46,15 @@
                     </tr>
                     <tr>
                         <th>Tanggal</th>
-                        <td>{{$p->tanggal}}</td>
+                        <td>{{ \Carbon\Carbon::parse($p->tanggal)->format('d-m-Y')}}</td>
                     </tr>
                     <tr>
                         <th>Tanggal Awal Perawatan</th>
-                        <td>{{$p->awal_perawatan}}</td>
+                        <td>{{ \Carbon\Carbon::parse($p->awal_perawatan)->format('d-m-Y')}}</td>
                     </tr>
                     <tr>
                         <th>Tanggal Akhir Perawatan</th>
-                        <td>{{$p->akhir_perawatan}}</td>
+                        <td>{{ \Carbon\Carbon::parse($p->akhir_perawatan)->format('d-m-Y')}}</td>
                     </tr>
                     <tr>
                         <th>Nomor Surat Elegibilitas Peserta</th>
@@ -64,7 +64,7 @@
                         <th>Surat Permohonan</th>
                         <td>
                             @if($p->surat_permohonan!= NULL)
-                                <img src="{{URL::to('/')}}/{{$p->surat_permohonan}}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto">
+                                <img src="{{URL::to('/')}}/{{$p->surat_permohonan}}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto" alt="Tidak Ada Gambar">
                             @else
                                 <h5 style="color:red">Tidak ada Gambar</h5>
                             @endif

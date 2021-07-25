@@ -37,13 +37,13 @@
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead>
                             <tr>
-                                <th scope="col">NO</th>                            
-                                <th scope="col">NAMA</th>
+                                <th scope="col">No.</th>                            
+                                <th scope="col">Nama</th>
                                 <th scope="col">NIK</th>
-                                <th scope="col">TANGGAL</th>
-                                <th scope="col">KECAMATAN</th>
-                                <th scope="col">KETERANGAN</th>
-                                <th scope="col">AKSI</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Kecamatan</th>
+                                <th scope="col">Keterangan</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,7 +52,8 @@
                                 <td>{{ $d+1 }}</td>
                                 <td>{{ $verifikasi->nama }}</td>
                                 <td>{{ $verifikasi->nik }}</td>
-                                <td>{{ $verifikasi->tanggal }}</td>
+                                <!-- <td>{{ \Carbon\Carbon::parse($verifikasi->tanggal)->format('d-m-Y')}}</td> -->
+                                <td>{{ $verifikasi->email }}</td>
                                 <td>{{ $verifikasi->kecamatan }}</td>
                                 <!-- <td>
                                     @if($verifikasi->surat_keterangan!= NULL)
@@ -66,7 +67,7 @@
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('verifikasi.destroyVerifikasi', $verifikasi->id) }}"method="POST">
                                         <!-- <a href="{{ route('penunggupasiens.edit', $verifikasi->id) }}" class="btn btn-sm btn-primary">Show</a> -->
                                         <a href="{{ route('verifikasi.detail', $verifikasi->id) }}" class="btn btn-sm btn-primary">Detail</a>
-                                        <a href="{{ url('kirim-email', $verifikasi->id) }}" class="btn btn-sm btn-primary" target="_blank">Kirim Notifikasi</a>
+                                        <a href="{{ url('kirim-email', $verifikasi->id) }}" class="btn btn-sm btn-primary" target="_blank">Kirim Notif Email</a>
                                         <!-- <a href="{{ route('pembayarans.edit', $verifikasi->id) }}" class="btn btn-sm btn-success">Pembayaran</a> -->
                                         <!-- <a href="" class="btn btn-sm btn-primary">Edit</a> -->
                                         <!-- <a href="{{ route('penunggupasiens.show', $verifikasi->id) }}" class="btn btn-sm btn-success waves-effect m-r-20">Show</a>

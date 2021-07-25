@@ -45,18 +45,13 @@
                     <th>No.</th>
                     <th>Nama</th>
                     <th>NIK</th>
+                    <th>Nomor Telepon</th>
+                    <th>Nama Pasien</th>
+                    <th>Kecamatan</th>
                     <th>Alamat</th>
-                    <th>nohp</th>
-                    <th>email</th>
-                    <th>nama_pasien</th>
-                    <!-- <th>alamat_pasien</th> -->
-                    <th>kecamatan</th>
-                    <th>tanggal</th>
                     <th>Awal Perawatan</th>
                     <th>Akhir Perawatan</th>
-                    <!-- <th>Surat Permohonan</th>
-                    <th>SEP</th>
-                    <th>Surat Kuasa</th> -->
+                    <th>Surat Keterangan</th>
                 </tr>
             </thead>
             @foreach($penunggupasien as $penunggupasien)
@@ -64,14 +59,15 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$penunggupasien->nama}}</td>
                     <td>{{$penunggupasien->nik}}</td>
-                    <td>{{$penunggupasien->alamat_pemohon}}</td>
                     <td>{{$penunggupasien->nohp}}</td>
-                    <td>{{$penunggupasien->email}}</td>
                     <td>{{$penunggupasien->nama_pasien}}</td>
+                    <td>{{$penunggupasien->alamat_pemohon}}</td>
                     <td>{{$penunggupasien->kecamatan}}</td>
-                    <td>{{$penunggupasien->tanggal}}</td>
-                    <td>{{$penunggupasien->awal_perawatan}}</td>
-                    <td>{{$penunggupasien->akhir_perawatan}}</td>
+                    <td>{{ \Carbon\Carbon::parse($penunggupasien->awal_perawatan)->format('d-m-Y')}}</td>
+                    <td>{{ \Carbon\Carbon::parse($penunggupasien->akhir_perawatan)->format('d-m-Y')}}</td>
+                    <td>
+                        <img src="{{ asset($penunggupasien->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto" alt="tidak ada gambar">
+                    </td>
 
                 </tr>
                 

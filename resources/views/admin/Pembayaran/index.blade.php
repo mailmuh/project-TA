@@ -31,13 +31,13 @@
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead>
                             <tr>
-                                    <th scope="col">NO</th>                            
-                                    <th scope="col">NAMA</th>
+                                    <th scope="col">No.</th>                            
+                                    <th scope="col">Nama</th>
                                     <th scope="col">NIK</th>
-                                    <th scope="col">ALAMAT</th>
-                                    <th scope="col">NOMOR HP</th>
-                                    <th scope="col">JUMLAH BANTUAN</th>
-                                    <th scope="col">AKSI</th>
+                                    <th scope="col">Alamat</th>
+                                    <th scope="col">Nomor Telepon</th>
+                                    <th scope="col">Jumlah Bantuan</th>
+                                    <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

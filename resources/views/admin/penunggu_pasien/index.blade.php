@@ -34,15 +34,15 @@
                     <table id="tabelPasien" class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead>
                             <tr>
-                                <th scope="col">NO</th>                            
-                                <th scope="col">NAMA</th>
+                                <th scope="col">No.</th>                            
+                                <th scope="col">Nama</th>
                                 <th scope="col">NIK</th>
-                                <th scope="col">NAMA PASIEN</th>
-                                <th scope="col">TANGGAL MASUK</th>
-                                <th scope="col">TANGGAL KELUAR</th>
-                                <th scope="col">SURAT KETERANGAN</th>
-                                <th scope="col">KETERANGAN</th>
-                                <th scope="col">AKSI</th>
+                                <th scope="col">Nama Pasien</th>
+                                <th scope="col">Awal Perawatan</th>
+                                <th scope="col">Akhir Perawatan</th>
+                                <th scope="col">Surat Keterangan</th>
+                                <th scope="col">Keterangan</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,11 +52,11 @@
                                 <td>{{ $penunggupasien->nama }}</td>
                                 <td>{{ $penunggupasien->nik }}</td>
                                 <td>{{ $penunggupasien->nama_pasien }}</td>
-                                <td>{{ $penunggupasien->awal_perawatan }}</td>
-                                <td>{{ $penunggupasien->akhir_perawatan }}</td>
+                                <td>{{ \Carbon\Carbon::parse($penunggupasien->awal_perawatan)->format('d-m-Y')}}</td>
+                                <td>{{ \Carbon\Carbon::parse($penunggupasien->akhir_perawatan)->format('d-m-Y')}}</td>
                                 <td>
                                     @if($penunggupasien->surat_keterangan!= NULL)
-                                       <img src="{{ asset($penunggupasien->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto">
+                                       <img src="{{ asset($penunggupasien->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto" alt="Tidak Ada Gambar">
                                     @else
                                         <h5 style="color:red">Tidak ada Gambar</h5>
                                     @endif 

@@ -44,7 +44,7 @@
                 <td>
                     <center>
                         <font size="2">KUITANSI TANDA TERIMA</font><br>
-                        <font size="2">PEMBERIAN DANA BANTUAN PENUNGGU PASIEN</font><br>
+                        <font size="2">PEMBERIAN DANA BANTUAN PENUNGGU PASIEN</font><br><BR>
                     </center>
                 </td>
 			</tr>
@@ -52,20 +52,20 @@
 		</table>
 		<table>
 			<tr class="text2">
-				<td>Nomor</td>
-				<td >: {{ $s->id }}</td>
+				<td>Nomor Kuitansi</td>
+				<td >: K/PDBPP-00{{ $s->id }}</td>
 			</tr>
             <tr>
 				<td>Telah Terima Dari</td>
 				<td >: Pemerintah Kota Tegal</td>
 			</tr>
 			<tr>
-				<td>Uang Sebanyak</td>
+				<td>Uang Sejumlah</td>
 				<td >: {{$s->jumlah_bantuan}}</td>
 			</tr>
             <tr>
 				<td>Untuk Pembayaran</td>
-				<td >: Bantuan sosial bagi penunggu pasien ataas nama {{$s->nama}} untuk tanggal {{$s->awal_perawatan}} s/d {{$s->akhir_perawatan}}</td>
+				<td >: Bantuan sosial bagi penunggu pasien ataas nama {{$s->nama}} untuk tanggal {{ \Carbon\Carbon::parse($s->awal_perawatan)->format('d-m-Y')}} s/d {{ \Carbon\Carbon::parse($s->akhir_perawatan)->format('d-m-Y')}}</td>
 			</tr>
 		</table>
 		<br><br><br>
