@@ -39,14 +39,11 @@
               }
           })
       }
-
-    
   </script>
   
 </head>
 <body>
   <section class="menu cid-r2t69rfwBI" once="menu" id="menu2-2">
-
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
@@ -68,19 +65,19 @@
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-secondary display-4" href="/"><span class="mbri-home mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 51, 102);"></span>
-                        Home</a></li>
-                        </li></ul>
-            
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-secondary display-4" href="/">
+                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 51, 102);"></span>Home
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobiri.se/a">online site builder</a></section><section class="mbr-section form1 cid-r2tiMjmYwP" id="form1-h">
-
-    
-
-    
+<section class="engine"><a href="https://mobiri.se/a">online site builder</a></section>
+<section class="mbr-section form1 cid-r2tiMjmYwP" id="form1-h">    
     <div class="container">
         <div class="row justify-content-center">
             <div class="title col-12 col-lg-8">
@@ -101,7 +98,6 @@
                     </div>
             
                     <!-- <form class="mbr-form" action="" method="post" data-form-title="Mobirise Form"> -->
-                        <input type="hidden" name="email" data-form-email="true" value="IbJvKSl+l/j3eQ8hWuiRtwd/w53kPqLOTzE5dvLj8wt8c1UG2Pat9tJHMPUuvxid+dhKpuTCNQ24KXI9i04da5GqBzZX3DvbUUuJbf1tS4H5herRrbIAz+VboTPszVk8" data-form-field="Email">
                         <div class="row row-sm-offset">
                             <div class="col-md-4 multi-horizontal" data-for="name">
                                 <div class="form-group">
@@ -148,44 +144,12 @@
             </div>
             <div class="media-container-row mbr-white">
                 <div class="col-sm-6 copyright">
-                    <p class="mbr-text mbr-fonts-style display-7">
-                        <!-- © Copyright 2018 Serenidad Homes - All Rights Reserved -->
-                        © Dinas Sosial Kota Tegal 2021
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <!-- <div class="social-list align-right">
-                        <div class="soc-item">
-                            <a href="https://twitter.com/serenidad" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://www.facebook.com/pages/serenidadhomes." target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#top" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-youtube socicon"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://instagram.com/serenidad" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://plus.google.com/u/0/+serenidad" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-googleplus socicon"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://www.behance.net/serenidad" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-behance socicon"></span>
-                            </a>
-                        </div>
-                    </div> -->
+                    <center>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            <!-- © Copyright 2018 Serenidad Homes - All Rights Reserved -->
+                            © Dinas Sosial Kota Tegal 2021
+                        </p>
+                    </center>
                 </div>
             </div>
         </div>
