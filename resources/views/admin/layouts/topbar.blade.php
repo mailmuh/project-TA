@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-            <a href="/home">
-                <img src="{{asset('assetsfrontend/images/header_logoDinsos.png')}}"style="width:180px;height:55px">
+            <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="/home">SPB | Dinas Sosial</a>
             <!-- <a class="navbar-brand" href="/">SPB | DINAS SOSIAL -->
                 <!-- <img src="{{asset('assets/images/dinsos.png')}}" width="70" height="55" alt="" /> -->
             </a>    

@@ -41,7 +41,7 @@
                                 <th scope="col">Nama</th>
                                 <th scope="col">NIK</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Kecamatan</th>
+                                <th scope="col">Alamat</th>
                                 <th scope="col">Keterangan</th>
                                 <th scope="col">Aksi</th>
                             </tr>
@@ -54,7 +54,7 @@
                                 <td>{{ $verifikasi->nik }}</td>
                                 <!-- <td>{{ \Carbon\Carbon::parse($verifikasi->tanggal)->format('d-m-Y')}}</td> -->
                                 <td>{{ $verifikasi->email }}</td>
-                                <td>{{ $verifikasi->kecamatan }}</td>
+                                <td>{{ $verifikasi->alamat_pemohon }}</td>
                                 <!-- <td>
                                     @if($verifikasi->surat_keterangan!= NULL)
                                        <img src="{{ asset($verifikasi->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto">

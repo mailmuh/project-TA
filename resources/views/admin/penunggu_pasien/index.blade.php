@@ -56,7 +56,7 @@
                                 <td>{{ \Carbon\Carbon::parse($penunggupasien->akhir_perawatan)->format('d-m-Y')}}</td>
                                 <td>
                                     @if($penunggupasien->surat_keterangan!= NULL)
-                                       <img src="{{ asset($penunggupasien->surat_keterangan) }}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto" alt="Tidak Ada Gambar">
+                                       <img src="{{URL::to('/')}}/{{$penunggupasien->surat_keterangan}}" class="mask waves-effect waves-light rgba-white-slight" height="85px" width="85px" width="auto" alt="Tidak Ada Gambar">
                                     @else
                                         <h5 style="color:red">Tidak ada Gambar</h5>
                                     @endif 

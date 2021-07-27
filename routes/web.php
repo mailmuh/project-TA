@@ -30,6 +30,9 @@ Route::group(['middleware' => ['auth']], function() {
     
     Route::get('/kirim-email/{id}', 'VerifikasiController@kirim');
 
+    // notif wa
+    Route::get('/kirim-wa', 'VerifikasiController@notifWa');
+
     // Route::get('penunggupasiens', 'PenungguPasienController@verifikasi');
     Route::get('/verifikasi', 'PenungguPasienController@showVerifikasi');
     Route::get('/verifikasi/{id}/detail', 'PenungguPasienController@detailVerifikasi')->name('verifikasi.detail');

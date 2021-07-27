@@ -189,4 +189,27 @@ class VerifikasiController extends Controller
         return view('admin.verifikasi.cetak-laporankecamatan', compact('penunggupasien'));
     }
 
+    public function notifWa()
+    {
+        $data = [
+            'phone' => '6282328445853', // Receivers phone
+            'body' => 'Hello, Andrew!', // Message
+        ];
+        $json = json_encode($data); // Encode data to JSON
+        // URL for request POST /message
+        $token = ' ugsmlg7peh3zwasv';
+        $instanceId = '311039';
+        $url = ' https://api.chat-api.com/instance311039/'.$instanceId.'/message?token='.$token;
+        // Make a POST request
+        $options = stream_context_create(['http' => [
+                'method'  => 'POST',
+                'header'  => 'Content-type: application/json',
+                'content' => $json
+            ]
+        ]);
+        // Send a request
+        $result = file_get_contents($url, false, $options);
+
+    }
+
 }
