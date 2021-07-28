@@ -189,17 +189,20 @@ class VerifikasiController extends Controller
         return view('admin.verifikasi.cetak-laporankecamatan', compact('penunggupasien'));
     }
 
-    public function notifWa()
+    public function notifWa($id)
     {
+        $penunggupasien = PenungguPasien::where('id',$id)->first(['nama', 'nohp']);
+        $nama = $penunggupasien->nama;
+        $nohp = $penunggupasien->nohp;
         $data = [
-            'phone' => '6282328445853', // Receivers phone
-            'body' => 'Hello, Andrew!', // Message
+            'phone' => $nohp, // Receivers phone
+            'body' => 'Halo, '.$nama.'. Data anda telah terverifikasi, silahkan datang ke kantor Dinas Sosial Kota Tegal pada jam kerja hari Senin s/d Jumat jam 8.00-16.00 untuk menerima dana bantuan. Terimakasih' // Message
         ];
         $json = json_encode($data); // Encode data to JSON
         // URL for request POST /message
-        $token = ' ugsmlg7peh3zwasv';
+        $token = 'ugsmlg7peh3zwasv';
         $instanceId = '311039';
-        $url = ' https://api.chat-api.com/instance311039/'.$instanceId.'/message?token='.$token;
+        $url = 'https://api.chat-api.com/instance'.$instanceId.'/message?token='.$token;
         // Make a POST request
         $options = stream_context_create(['http' => [
                 'method'  => 'POST',

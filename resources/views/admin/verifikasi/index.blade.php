@@ -40,7 +40,7 @@
                                 <th scope="col">No.</th>                            
                                 <th scope="col">Nama</th>
                                 <th scope="col">NIK</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Nomor Hp</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Keterangan</th>
                                 <th scope="col">Aksi</th>
@@ -53,7 +53,7 @@
                                 <td>{{ $verifikasi->nama }}</td>
                                 <td>{{ $verifikasi->nik }}</td>
                                 <!-- <td>{{ \Carbon\Carbon::parse($verifikasi->tanggal)->format('d-m-Y')}}</td> -->
-                                <td>{{ $verifikasi->email }}</td>
+                                <td>{{ $verifikasi->nohp }}</td>
                                 <td>{{ $verifikasi->alamat_pemohon }}</td>
                                 <!-- <td>
                                     @if($verifikasi->surat_keterangan!= NULL)
@@ -67,7 +67,7 @@
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('verifikasi.destroyVerifikasi', $verifikasi->id) }}"method="POST">
                                         <!-- <a href="{{ route('penunggupasiens.edit', $verifikasi->id) }}" class="btn btn-sm btn-primary">Show</a> -->
                                         <a href="{{ route('verifikasi.detail', $verifikasi->id) }}" class="btn btn-sm btn-primary">Detail</a>
-                                        <a href="{{ url('kirim-email', $verifikasi->id) }}" class="btn btn-sm btn-primary" target="_blank">Kirim Notif Email</a>
+                                        <a href="{{ url('kirim-wa', $verifikasi->id) }}" class="btn btn-sm btn-primary" target="_blank">Kirim Notif</a>
                                         <!-- <a href="{{ route('pembayarans.edit', $verifikasi->id) }}" class="btn btn-sm btn-success">Pembayaran</a> -->
                                         <!-- <a href="" class="btn btn-sm btn-primary">Edit</a> -->
                                         <!-- <a href="{{ route('penunggupasiens.show', $verifikasi->id) }}" class="btn btn-sm btn-success waves-effect m-r-20">Show</a>
