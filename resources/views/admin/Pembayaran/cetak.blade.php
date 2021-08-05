@@ -26,7 +26,7 @@
 	<center>
 		<table>
 			<tr>
-				<td><img src="{{asset('assets/images/dinsos.png')}}" width="110" height="90"></td>
+				<td></td>
 				<td>
 				<center>
 					<font size="4">PEMERINTAHAN KOTA TEGAL</font><br>
@@ -38,9 +38,9 @@
 			<tr>
 				<td colspan="2"><hr></td>
 			</tr>
-		<table width="625">
+		<table >
 			<tr>
-				<!-- <td class="text2">{{$s->tempat_surat}}, {{$s->tgl_surat}}</td> -->
+				<td class="text2"></td>
                 <td>
                     <center>
                         <font size="2">KUITANSI TANDA TERIMA</font><br>
@@ -69,13 +69,13 @@
 			</tr>
 		</table>
 		<br><br><br>
-		<table width="625">
+		<table >
 			<tr>
 				<td ><br><br><br><br></td>
 				<td class="text" align="center">Yang Menerima, <br><br><br><br>{{ $s->nama }}</td>
 			
-				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Yang Menyerahkan, <br><img src="{{asset('assets/images//ttd.png')}}" width="60" height="60"><br>SITI CAHYANI, S.Sos, M.Si</td>
+				<td width="200"><br><br><br><br></td>
+				<td class="text" align="center">Yang Menyerahkan, <br><br><br><br>SITI CAHYANI, S.Sos, M.Si</td>
 			</tr>
 	     </table>
 		<!-- <table width="625">
@@ -90,8 +90,11 @@
 	     </table> -->
 	</center>
     @endforeach
-    <script type="text/javascript">
-        window.print();
-    </script>
+    @if('status == cetak') {
+		<script type="text/javascript">
+			window.print();
+		</script>
+	}
+	@endif
 </body>
 </html>

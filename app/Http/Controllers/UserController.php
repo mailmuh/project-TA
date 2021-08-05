@@ -38,6 +38,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'required' => ':attribute wajib diisi',
+            'email' => 'format :attribute yang anda inputkan salah ',
+        ];
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'role' => 'required',
+
+        ],$messages);
 
         User::create([
             'name' => $request->input("name"),

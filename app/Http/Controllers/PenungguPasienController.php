@@ -56,7 +56,8 @@ class PenungguPasienController extends Controller
             'numeric' => ':attribute harus diisi dengan angka',
             'email' => 'format :attribute yang anda inputkan salah ',
             'image' => ':attribute format yang anda inputkan salah',
-            'date' => ':attribute tanggal harus sesuai'
+            'date' => ':attribute tanggal harus sesuai',
+            'after_or_equal' => 'tanggal inputan form :attribute salah',
         ];
 
         $request->validate([
@@ -68,9 +69,9 @@ class PenungguPasienController extends Controller
             'nama_pasien' => 'required',
             'alamat_pasien' => 'required',
             'kecamatan' => 'required',
-            'tanggal' => 'required',
+            'tanggal' => 'required|date|after_or_equal:awal_perawatan',
             'awal_perawatan' => 'required',
-            'akhir_perawatan' => 'required',
+            'akhir_perawatan' => 'required|date|after_or_equal:awal_perawatan',
             'surat_permohonan' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'sep' => 'required',
             'surat_keterangan' => 'required|image|mimes:jpeg,jpg,png|max:2048',
@@ -413,6 +414,7 @@ class PenungguPasienController extends Controller
             'nik' => $penunggupasien->nik,
             'alamat_pemohon' => $penunggupasien->alamat_pemohon,
             'nohp' => $penunggupasien->nohp,
+            'email' => $penunggupasien->email,
             'nama_pasien' => $penunggupasien->nama_pasien,
             'awal_perawatan' => $penunggupasien->awal_perawatan,
             'akhir_perawatan' => $penunggupasien->akhir_perawatan,

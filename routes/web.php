@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth']], function() {
     // notif wa
     Route::get('/kirim-wa/{id}', 'VerifikasiController@notifWa');
 
+    Route::get('/kirim-kuitansi/{id}', 'PembayaranController@kirimKuitansi');
+
     // Route::get('penunggupasiens', 'PenungguPasienController@verifikasi');
     Route::get('/verifikasi', 'PenungguPasienController@showVerifikasi');
     Route::get('/verifikasi/{id}/detail', 'PenungguPasienController@detailVerifikasi')->name('verifikasi.detail');

@@ -191,8 +191,19 @@ class VerifikasiController extends Controller
 
     public function notifWa($id)
     {
-        $penunggupasien = PenungguPasien::where('id',$id)->first(['nama', 'nohp']);
+        // notif email
+        $penunggupasien = PenungguPasien::where('id',$id)->first(['nama', 'email', 'nohp' ]);
+        // echo json_encode($penunggupasien);
+        // return view('admin.verifikasi.email', compact('penunggupasien'));
+        // echo $id;
+
         $nama = $penunggupasien->nama;
+        $email = $penunggupasien->email;
+        $kirim = Mail::to($email)->send(new SendMail($nama));
+
+        // notif whatsapp
+        // $penunggupasien = PenungguPasien::where('id',$id)->first(['nama', 'nohp']);
+        // $nama = $penunggupasien->nama;
         $nohp = $penunggupasien->nohp;
         $data = [
             'phone' => $nohp, // Receivers phone
@@ -212,6 +223,7 @@ class VerifikasiController extends Controller
         ]);
         // Send a request
         $result = file_get_contents($url, false, $options);
+        dd('Notifikasi Berhasil Terkirim!!!');
 
     }
 

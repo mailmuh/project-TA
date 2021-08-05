@@ -117,6 +117,9 @@
                                     <div class="form-line">
                                         <label>Tanggal Awal Perawatan</label>
                                         <input type="date" name="awal_perawatan" placeholder="Masukan KTP Pemohon" class="form-control" value="{{ old('awal_perawatan') }}" ">
+                                        @if($errors->has('awal_perawatan'))
+                                            <span class="text-danger">{{ $errors->first('awal_perawatan') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -125,6 +128,9 @@
                                     <div class="form-line">
                                         <label>Tanggal Akhir Perawatan</label>
                                         <input type="date" name="akhir_perawatan" placeholder="Masukan KTP Pasien" class="form-control" value="{{ old('akhir_perawatan') }}" >
+                                        @if($errors->has('akhir_perawatan'))
+                                            <span class="text-danger">{{ $errors->first('akhir_perawatan') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

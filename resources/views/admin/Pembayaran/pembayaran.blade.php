@@ -87,6 +87,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label>UNGGAH KUITANSI</label>
+                                        <small class="text-danger">(format harus jpeg,jpg,png,pdf)</small>
+                                        <div class="fallback">
+                                            <img src="{{ asset($pembayaran->kuitansi) }}" class="mask waves-effect waves-light rgba-white-slight" height="100px" width="auto" alt="tidak ada gambar">
+                                            <input name="kuitansi" type="file" multiple value="{{ $pembayaran->kuitansi }}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                         <a href="{{ route('penunggupasiens.index') }}" class="btn btn-sm btn-success waves-effect m-r-20">Back</a>
                         <button type="submit" class="btn btn-sm btn-primary waves-effect m-r-20">Save & Update</button>

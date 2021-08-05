@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pembayaran;
 use App\PenungguPasien;
+use PDF;
+use Mail;
 
 class PembayaranController extends Controller
 {
@@ -49,7 +51,8 @@ class PembayaranController extends Controller
     public function show($id)
     {
         $pembayaran = Pembayaran::where('id',$id)->get();
-        return view('admin.pembayaran.cetak', ['pembayaran' => $pembayaran]);
+        $status = 'cetak';
+        return view('admin.pembayaran.cetak', ['pembayaran' => $pembayaran, 'status' => $status]);
         // return view('admin.pembayaran.detail', compact('pembayaran'));
     }
 
@@ -74,6 +77,7 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, Pembayaran $pembayaran)
     {
+        $fileNameSP =  'Kuitansi-'.request()->kuitansi->getClientOriginalName();
         // dd($request->awal);
         $request->validate([
             'nama' => 'required',
@@ -91,9 +95,12 @@ class PembayaranController extends Controller
         $data->nohp = $request->nohp;
         $data->nama_pasien = $request->nama_pasien;
         $data->jumlah_bantuan = $request->jumlah_bantuan;
+        if ($request->kuitansi->move(storage_path('app/public/DataPenungguPasien/pembayaran'), $fileNameSP)) {
+            $data->kuitansi = "storage/DataPenungguPasien/pembayaran/".$fileNameSP;
+        }
         $data->update();
 
-        return redirect()->route('pembayarans.index');
+        return redirect()->route('pembayarans.index')->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -108,5 +115,33 @@ class PembayaranController extends Controller
         $pembayaran->delete();
 
         return redirect(route('pembayarans.index'))->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function kirimKuitansi($id)
+    {
+
+        $email = Pembayaran::where('id',$id)->first('email')->email;
+        $pembayaran = Pembayaran::where('id',$id)->get();
+        // return view('admin.pembayaran.cetak', ['pembayaran' => $pembayaran]);
+        $data["email"] = $email;
+        $data["title"] = "Dinas Sosial Kota Tegal";
+        $data["body"] = "This is Demo";
+        $status = 'notif';
+        $pdf = PDF::loadView('admin.pembayaran.cetak', ['pembayaran' => $pembayaran, 'status-'=>$status]);
+        Mail::send('admin.pembayaran.myTestMail', $data, function($message)use($data, $pdf) {
+
+            $message->to($data["email"], $data["email"])
+
+                    ->subject($data["title"])
+
+                    ->attachData($pdf->output(), "kuitansi.pdf");
+
+        });
+        
+        // notif wa
+
+       
+        dd('Mail sent successfully');
+// echo $email;
     }
 }
