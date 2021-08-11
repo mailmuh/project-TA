@@ -51,8 +51,8 @@ class PenungguPasienController extends Controller
 
         $messages = [
             'required' => ':attribute wajib diisi',
-            'min' => ':attribute harus diisi minimal :min karakter',
-            'max' => ':attribute harus diisi maksimal :max karakter',
+            'min' => ':attribute harus diisi minimal 16 karakter',
+            'max' => ':attribute harus diisi maksimal 16 karakter',
             'numeric' => ':attribute harus diisi dengan angka',
             'email' => 'format :attribute yang anda inputkan salah ',
             'image' => ':attribute format yang anda inputkan salah',
@@ -62,9 +62,9 @@ class PenungguPasienController extends Controller
 
         $request->validate([
             'nama' => 'required',
-            'nik' => 'required|numeric|min:16',
+            'nik' => 'required|numeric|min:1111111111111111|max:1111111111111111',
             'alamat_pemohon' => 'required',
-            'nohp' => 'required|numeric|min:11',
+            'nohp' => 'required|numeric|min:11111111111|max:1111111111111',
             'email' => 'required|email',
             'nama_pasien' => 'required',
             'alamat_pasien' => 'required',

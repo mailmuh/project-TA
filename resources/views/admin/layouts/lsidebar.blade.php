@@ -19,7 +19,7 @@
                     <li><a href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"
-                        ><i class="material-icons">input</i>Sign Out</a>
+                        ><i class="material-icons">input</i>Log Out</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
@@ -59,6 +59,12 @@
                 </a>
             </li>
             <li class="{{ Request::is('useradmins')?'active':'' }}">
+                <a href="/useradmins">
+                    <i class="material-icons">people</i>
+                    <span>Kelola Akun</span>
+                </a>
+            </li>
+            <!-- <li class="{{ Request::is('useradmins')?'active':'' }}">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">people</i>
                     <span>Kelola Akun</span>
@@ -71,7 +77,7 @@
                         <a href="/userpemohons">Akun Pemohon</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             @elseif(Auth::User()->role === 'admindinsos')
             <li class="{{ Request::is('home')?'active':'' }}">
                 <a href="/home">
@@ -98,6 +104,12 @@
                 </a>
             </li>
             <li class="{{ Request::is('useradmins')?'active':'' }}">
+                <a href="/useradmins">
+                    <i class="material-icons">people</i>
+                    <span>Kelola Akun</span>
+                </a>
+            </li>
+            <!-- <li class="{{ Request::is('useradmins')?'active':'' }}">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">people</i>
                     <span>Kelola Akun</span>
@@ -110,7 +122,7 @@
                         <a href="/userpemohons">Akun Pemohon</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             @elseif(Auth::user()->role === 'adminkardinah')
             <li class="{{ Request::is('home')?'active':'' }}">
                 <a href="/home">

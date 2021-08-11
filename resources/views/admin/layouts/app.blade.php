@@ -21,25 +21,25 @@
     <link href="{{ asset('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="{{ asset('assets/plugins/animate-css/animate.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
     <!-- JQuery DataTable Css -->
-    <link href="{{ asset('assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
 
     <!-- Dropzone Css -->
-    <link href="{{ asset('assets/plugins/dropzone/dropzone.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/dropzone/dropzone.css') }}" rel="stylesheet">
 
     <!-- Bootstrap Select Css -->
-    <link href="{{ asset('assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet')}}" />
+    <link href="{{ asset('assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />
 
     <!-- Sweetalert Css -->
-    <link href="{{ asset('assets/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="{{ asset('assets/css/themes/all-themes.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
 </head>
 
 <body class="theme-blue">
@@ -47,7 +47,7 @@
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
-                <div class="spinner-layer pl-red">
+                <div class="spinner-layer pl-blue">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
                     </div>
@@ -98,69 +98,70 @@
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
 
     <!-- Select Plugin Js -->
-    <script src="{{asset('assets/plugins/bootstrap-select/js/bootstrap-select.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="{{asset('assets/plugins/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="{{asset('assets/plugins/node-waves/waves.js')}}"></script>
+    <script src="{{asset('assets/plugins/node-waves/waves.js') }}"></script>
 
     <!-- Jquery DataTable Plugin Js -->
-    <script src="{{ asset('assets/plugins/jquery-datatable/jquery.dataTables.js')}}"></script>
-    <script src="{{ asset('assets/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js')}}"></script>
-    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js')}}"></script>
-    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/buttons.flash.min.js')}}"></script>
-    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/jszip.min.js')}}"></script>
-    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/pdfmake.min.js')}}"></script>
-    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/vfs_fonts.js')}}"></script>
-    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/buttons.html5.min.js')}}"></script>
-    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/buttons.print.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-datatable/extensions/export/buttons.print.min.js') }}"></script>
 
     <!-- Dropzone Plugin Js -->
-    <script src="{{ asset('assets/plugins/dropzone/dropzone.js')}}"></script>
+    <script src="{{ asset('assets/plugins/dropzone/dropzone.js') }}"></script>
 
     <!-- Jquery CountTo Plugin Js -->
-    <script src="{{asset('assets/plugins/jquery-countto/jquery.countTo.js')}}"></script>
+    <script src="{{ asset('assets/plugins/jquery-countto/jquery.countTo.js') }}"></script>
 
     <!-- SweetAlert Plugin Js -->
-    <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
 
     <!-- Bootstrap Notify Plugin Js -->
-    <script src="{{ asset('assets/plugins/bootstrap-notify/bootstrap-notify.js')}}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script>
 
     <!-- Morris Plugin Js -->
-    <script src="{{asset('assets/plugins/raphael/raphael.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/morrisjs/morris.js')}}"></script>
+    <script src="{{asset('assets/plugins/raphael/raphael.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/morrisjs/morris.js') }}"></script>
 
     <!-- ChartJs -->
-    <script src="{{asset('assets/plugins/chartjs/Chart.bundle.js')}}"></script>
+    <script src="{{asset('assets/plugins/chartjs/Chart.bundle.js') }}"></script>
 
     <!-- Flot Charts Plugin Js -->
-    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.js')}}"></script>
-    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.resize.js')}}"></script>
-    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.pie.js')}}"></script>
-    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.categories.js')}}"></script>
-    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.time.js')}}"></script>
+    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.js') }}"></script>
+    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.resize.js') }}"></script>
+    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.pie.js') }}"></script>
+    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.categories.js') }}"></script>
+    <script src="{{asset('assets/plugins/flot-charts/jquery.flot.time.js') }}"></script>
 
     <!-- Sparkline Chart Plugin Js -->
-    <script src="{{asset('assets/plugins/jquery-sparkline/jquery.sparkline.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-sparkline/jquery.sparkline.js') }}"></script>
 
     <!-- Custom Js -->
-    <script src="{{asset('assets/js/admin.js')}}"></script>
+    <script src="{{asset('assets/js/admin.js') }}"></script>
     <!-- <script src="{{asset('assets/js/pages/index.js')}}"></script> -->
-    <script src="{{ asset('assets/js/pages/ui/dialogs.js')}}"></script>
+    <script src="{{ asset('assets/js/pages/ui/dialogs.js') }}"></script>
     <script src="{{ asset('assets/js/pages/tables/jquery-datatable.js') }}"></script>
 
     <!-- Demo Js -->
-    <script src="{{asset('assets/js/demo.js')}}"></script>
-        <script>
+    <script src="{{asset('assets/js/demo.js') }}"></script>
+    <script src="{{asset('assets/js/pages/widgets/infobox/infobox-4.js') }}"></script>
+    <script>
     $(function () {
         $("#tabelPasien").DataTable();
         $("#tabelSuratkeluar").DataTable();
@@ -192,7 +193,7 @@
             $(this).addClass('active');
         });
     });
-</script>
+    </script>
 @include('sweetalert::alert')
 </body>
 

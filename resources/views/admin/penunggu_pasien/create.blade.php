@@ -170,7 +170,7 @@
                                     <div class="form-line">
                                         <div class="fallback">
                                             <label>UNGGAH SURAT KETERANGAN</label>
-                                            <small class="text-danger">(format harus jpeg,jpg,png,pdf)</small>
+                                            <small class="text-danger">(format harus jpeg,jpg,png)</small>
                                             <input name="surat_keterangan" type="file" multiple  value="{{ old('surat_keterangan') }}" />
                                             
                                         </div>

@@ -44,6 +44,14 @@
 							Login
 						</button>
 					</div>
+
+					<div class="col-xs-6 align-right">
+                            <!-- <a>Forgot Password?</a> -->
+                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        </div>
+						
 				</form>
 			</div>
             <div class="col-sm-6 copyright">

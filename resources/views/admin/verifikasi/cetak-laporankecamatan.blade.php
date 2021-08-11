@@ -79,7 +79,7 @@
 		<table width="625">
 			<tr>			
 				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Dinas Sosial Kota Tegal, <br><br><br><br>Dyah Kemala Sintha, SH., MH</td>
+				<td class="text" align="center">Dinas Sosial Kota Tegal, <br><img src="{{asset('assets/images/ttd.png')}}" width="60" height="60"><br>Dyah Kemala Sintha, SH., MH</td>
 			</tr>
 	     </table>
     </div>

@@ -1,12 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.appauth')
 
 @section('content')
+<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
+                <center><div class="card-header">{{ __('Reset Password') }}</div>
+                </center>
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
@@ -50,7 +51,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 ">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Reset Password') }}
                                 </button>
@@ -58,6 +59,13 @@
                         </div>
                     </form>
                 </div>
+                <center>
+                    <hr>
+                    <p class="mbr-text mbr-fonts-style display-7 text-black">
+                        <!-- © Copyright 2018 Serenidad Homes - All Rights Reserved -->
+                        © Dinas Sosial Kota Tegal 2021
+                    </p>
+                </center>
             </div>
         </div>
     </div>

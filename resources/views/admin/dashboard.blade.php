@@ -10,18 +10,20 @@
 
             <!-- Widgets -->
             <div class="row clearfix">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-pink hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">assignment </i>
+                <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                    <a href="/penunggupasiens">    
+                    <div class="info-box-3 bg-pink hover-zoom-effect">
+                            <div class="icon">
+                                <i class="material-icons">assignment </i>
+                            </div>
+                            <div class="content">
+                                <div class="text">DATA PEMOHON</div>
+                                <div class="number count-to" data-from="0" data-to="{{ DB::table('penunggu_pasiens')->count() }}" data-speed="1000" data-fresh-interval="20"> {{ DB::table('penunggu_pasiens')->count() }} </div>
+                            </div>
                         </div>
-                        <div class="content">
-                            <div class="text">DATA PEMOHON</div>
-                            <div class="number count-to" data-from="0"  data-to="125" data-speed="15" data-fresh-interval="20"> {{ DB::table('penunggu_pasiens')->count() }} </div>
-                        </div>
-                    </div>
+                    </a>    
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box bg-orange hover-expand-effect">
                         <div class="icon">
                             <i class="material-icons">assignment</i>
@@ -31,29 +33,33 @@
                             <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20">{{DB::table('penunggu_pasiens')->where('keterangan','belum terverifikasi')->count()}}</div>
                         </div>
                     </div>
+                </div> -->
+                <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                    <a href="/verifikasi">
+                        <div class="info-box-3 bg-cyan hover-zoom-effect">
+                            <div class="icon">
+                                <i class="material-icons">playlist_add_check</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">DATA VERIFIKASI</div>
+                                <div class="number count-to" data-from="0" data-to="{{DB::table('penunggu_pasiens')->where('keterangan','terverifikasi')->count()}}" data-speed="1000" data-fresh-interval="20"> {{DB::table('penunggu_pasiens')->where('keterangan','terverifikasi')->count()}}</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-cyan hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">playlist_add_check</i>
+                <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                    <a href="/pembayarans">
+                        <div class="info-box-3 bg-light-green hover-zoom-effect">
+                            <div class="icon">
+                                <i class="material-icons">payment</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">DATA PEMBAYARAN</div>
+                                <!-- <h3>{{ DB::table('penunggu_pasiens')->count() }}</h3> -->
+                                <div class="number count-to" data-from="0" data-to="{{ DB::table('pembayarans')->count() }}" data-speed="1000" data-fresh-interval="20">{{ DB::table('pembayarans')->count() }} </div>
+                            </div>
                         </div>
-                        <div class="content">
-                            <div class="text">DATA VERIFIKASI</div>
-                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"> {{DB::table('penunggu_pasiens')->where('keterangan','terverifikasi')->count()}}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-light-green hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">payment</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">DATA PEMBAYARAN</div>
-                            <!-- <h3>{{ DB::table('penunggu_pasiens')->count() }}</h3> -->
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20">{{ DB::table('pembayarans')->count() }} </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
             <!-- #END# Widgets -->
